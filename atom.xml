@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[shirley's Blog]]></title>
+  <subtitle><![CDATA[keep Calm]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://shirleyYing.com/"/>
+  <updated>2018-01-27T13:44:42.057Z</updated>
+  <id>http://shirleyYing.com/</id>
+  
+  <author>
+    <name><![CDATA[zhangying]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ES6 模块加载机制]]></title>
+    <link href="http://shirleyYing.com/2018/01/08/es6-modules-load/"/>
+    <id>http://shirleyYing.com/2018/01/08/es6-modules-load/</id>
+    <published>2018-01-08T14:53:49.000Z</published>
+    <updated>2018-01-27T13:44:42.057Z</updated>
+    <content type="html"><![CDATA[<p>近来在工作中需要使用angular，并且使用了一个表格组件，对，juqery的插件datatable，遇到了文件引用问题。才发现其实自己还没有很了解ES6。趁此机会，又去了解了一次es6模块加载机制，记录如下。<br><a id="more"></a></p>
+<h2 id="问题重现">问题重现</h2><h2 id="探究">探究</h2><h2 id="原理">原理</h2>]]></content>
+    <summary type="html">
+    <![CDATA[<p>近来在工作中需要使用angular，并且使用了一个表格组件，对，juqery的插件datatable，遇到了文件引用问题。才发现其实自己还没有很了解ES6。趁此机会，又去了解了一次es6模块加载机制，记录如下。<br>]]>
+    
+    </summary>
+    
+      <category term="ES6模块加载机制" scheme="http://shirleyYing.com/tags/ES6%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[2017总结]]></title>
+    <link href="http://shirleyYing.com/2017/12/29/2017-summary/"/>
+    <id>http://shirleyYing.com/2017/12/29/2017-summary/</id>
+    <published>2017-12-29T13:30:21.000Z</published>
+    <updated>2018-01-27T13:35:01.767Z</updated>
+    <content type="html"><![CDATA[<h3 id="关于工作">关于工作</h3><p>  工作上平平常常，没什么出彩的事，经历了转岗，背了差绩效。本来以为铁打的营盘流水的兵，来来去去不是很正常的事吗。结果，却比意料中难了许多，恶心了许多。曾经敬佩，喜欢的人啊，没想到最后人设崩塌，还能因为什么呢？因为自己的利益啊。真真假假，看不清楚。总之是走了，就向前看吧。</p>
+<p>  到了新的地方，做出一些成绩来。好好努力，买股票，买包买口红</p>
+<h3 id="关于学习">关于学习</h3><p>这一年，学习放松了很多，也花时间看了一些东西但是看完就完了，没有输出，感觉像是没有看。<br>做的东西太少，执行力太差。<br>学做了一些node的东西，也就仅限于搭了一个web服务。其他的啥也没做，还是皮毛。<br>但总的来说，确实是比去年好一些了吧。不再害怕遇到问题，不再逃避，心中有了一些方法和感觉。做起来的主观感受好了很多。</p>
+<h3 id="关于生活">关于生活</h3><ol>
+<li>养的多肉都死了，最后还是死在了夏天，现在尸骨无存，飘散到风中了吧</li>
+<li>买了好多口红，屯了好多粉底。导致想买的买不了。</li>
+<li>买了很贵的护肤品，最后发现还是早点睡觉最管用。每天坚持用薏仁水湿敷，确实看到了一点效果。</li>
+<li>冬天买了豆浆机天天早上打豆浆，断断续续有两个多月吧，生发大业还是收效甚微。导致我不再敢染烫。现在剪了个小学生头…</li>
+</ol>
+<h3 id="关于旅行">关于旅行</h3><h5 id="湖南小龙虾">湖南小龙虾</h5><p>土豪前部门季度团建，对湖南的记忆就只有文和友小龙虾，和一个忘了名字的但是很有名的臭豆腐。在烈日下包车红色之旅一日游，去了毛主席的家乡还是那里，那个村的入口修的有高铁站那么大，但是就是一个高铁站版的门楼牌坊。大巴不能进去，必须换成他们的车。换了毛式公交又坐了20多分钟的车，看到了很多毛式红烧肉。但是我们没吃，吃了一个巨难吃的团餐。后面的事情都不记得了，就记得热。应该有30度。</p>
+<p>然后就是在酒店叫小龙虾的外卖，一屋子女生讲了很多八卦。</p>
+<h5 id="内蒙古骑马">内蒙古骑马</h5><p>又是一次团建，去了内蒙古，但是并没有草原，和烤全羊。</p>
+<p>那个草原都不好意思拍照，还不如深圳湾公园，本身那个地方水草就不丰美，而且去的时候不是雨季。我们拍照都往上拍哈哈哈。去了就告诉我们骑马要另交钱，结果就交了800块吧好像。但是确实带我们在马上奔驰了半个多小时吧，只是小跑，但是马真的好高啊，它颠个小碎步我们都要吓坏了。摔下来肯定骨折，而且真的屁股要被颠成八瓣了，好累。一路都在想，古装戏里那些策马奔腾真是不容易啊，屁股痛啊。<br>下午看了个表演后，自由活动，我们又去骑马了， 这次叫跑马，真的是跑的！半个小时200块吧？还是一百多不记得了。哇，超爽，真的是前蹄并一起那种大跨步跑起来，整个人要夹紧马肚子站在脚蹬上，要是坐在上面，就要被甩掉了。、</p>
+<p>后来又去了沙漠（假的）,住了据说很贵的莲花沙漠酒店，但是吧，没啥印象，酒店里的泳池水很脏，没有人游泳。也没有美女。<br>也没有看到日出。</p>
+<h5 id="马来仙仙仙本那">马来仙仙仙本那</h5><p>年度最惊艳之旅，第一次见到辣么蓝，辣么清的大海。以前我都以为那都是电视里的，现实中不存在的。真是贫穷限制了我的想象。第一次深潜，并且吃到了超便宜，超大的皮皮虾以及各种不知道啥名字的海鲜</p>
+<h5 id="计划之中的巴厘岛">计划之中的巴厘岛</h5><p>存在在计划中，因为巴厘岛火山爆发了…,上一次爆发是在50年前。</p>
+<h3 id="关于计划">关于计划</h3><ol>
+<li>健身，然后去拍一套照片，留下25岁青春的影子</li>
+<li>学习，github绿起来，坚持笔记输出，不要再次经历无助，只能被欺负并不能做什么的无奈。可以有更多的话语权。</li>
+<li>学会做一桌子菜。</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="关于工作">关于工作</h3><p>  工作上平平常常，没什么出彩的事，经历了转岗，背了差绩效。本来以为铁打的营盘流水的兵，来来去去不是很正常的事吗。结果，却比意料中难了许多，恶心了许多。曾经敬佩，喜欢的人啊，没想到最后人设崩塌，还能因为什么呢？因为自己的利益啊。]]>
+    </summary>
+    
+      <category term="life" scheme="http://shirleyYing.com/tags/life/"/>
+    
+      <category term="life" scheme="http://shirleyYing.com/categories/life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[new life]]></title>
+    <link href="http://shirleyYing.com/2017/12/29/new-life/"/>
+    <id>http://shirleyYing.com/2017/12/29/new-life/</id>
+    <published>2017-12-28T16:01:47.000Z</published>
+    <updated>2018-01-27T13:35:01.768Z</updated>
+    <content type="html"><![CDATA[<h1 id="生活琐事">生活琐事</h1><p>今天终于把15年搭的博客源码找回来了，工作一年半，确实没有怎么写东西，想起来了就东写一篇系写一篇。</p>
+<p>总是要制定不切实际的计划，然后意料之中又无比难受的放弃，并且否定自己。曾经想写个自己的博客前后台系统。放到腾讯云上，<br>但是，环境折腾了一晚上，就不了了之了。还是先找个地方写东西，其他的慢慢折腾。记录是一定要有的。<br>t</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="生活琐事">生活琐事</h1><p>今天终于把15年搭的博客源码找回来了，工作一年半，确实没有怎么写东西，想起来了就东写一篇系写一篇。</p>
+<p>总是要制定不切实际的计划，然后意料之中又无比难受的放弃，并且否定自己。曾经想写个自己的博客前后台系统。放到腾讯云上]]>
+    </summary>
+    
+      <category term="life" scheme="http://shirleyYing.com/tags/life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[记录--一个简单的数据封装]]></title>
+    <link href="http://shirleyYing.com/2016/06/02/data-processing/"/>
+    <id>http://shirleyYing.com/2016/06/02/data-processing/</id>
+    <published>2016-06-02T04:25:26.000Z</published>
+    <updated>2018-01-27T13:35:01.767Z</updated>
+    <content type="html"><![CDATA[<h1 id="记录–一个简单的数据封装">记录–一个简单的数据封装</h1><a id="more"></a>
+<h3 id="数据库返回的数据格式：">数据库返回的数据格式：</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data=[&#123;</span><br><span class="line"><span class="symbol">    knowledge_point:</span> <span class="string">"网页设计与制作"</span>,</span><br><span class="line"><span class="symbol">    type_name:</span> <span class="string">"单选"</span>,</span><br><span class="line"><span class="symbol">    count:</span> <span class="number">70</span></span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line"><span class="symbol">    knowledge_point:</span> <span class="string">"网页设计与制作"</span>,</span><br><span class="line"><span class="symbol">    type_name:</span> <span class="string">"多选"</span>,</span><br><span class="line"><span class="symbol">    count:</span> <span class="number">30</span></span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+<h3 id="需要的数据格式">需要的数据格式</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">data= &#123;</span><br><span class="line"><span class="symbol">    knowledge_point:</span> <span class="string">"网页设计与制作"</span>,</span><br><span class="line"><span class="symbol">    sum:</span> <span class="number">100</span>,</span><br><span class="line"><span class="symbol">    types:</span> [&#123;</span><br><span class="line"><span class="symbol">        type_name:</span> <span class="string">"单选"</span>,</span><br><span class="line"><span class="symbol">        count:</span> <span class="number">70</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line"><span class="symbol">        type_name:</span> <span class="string">"多选"</span>,</span><br><span class="line"><span class="symbol">        count:</span> <span class="number">30</span></span><br><span class="line">    &#125;]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="主要思路">主要思路</h3><p>把相同knowledge_point 的type_name和count合并到数组中，最初的想法是一个for取得knowledge_point，第二个for遍历按照knowledge_point将type_name,count放到对应数组中，第三个for，将第二次for生成的数组塞到对应knowledge_point的对象中。</p>
+<p>多次循环效率太低，想用一个for搞定，难点就是第一次得到一个新的knowledge_point时，可以封装，但是第二次遇到时，在循环中不能取得第一次遇到的对象在数组中的位置。想到了对象属性可以直接调用，定义一个<code>foramatData={}</code>将knowledge_point作为key<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">foramatData:</span>&#123;</span><br><span class="line">    <span class="string">"网页设计与制作"</span>:&#123;</span><br><span class="line"><span class="symbol">        knowledge_point:</span><span class="string">"网页设计与制作"</span>, </span><br><span class="line"><span class="symbol">        types:</span> [&#123;</span><br><span class="line"><span class="symbol">            type_name:</span> <span class="string">"单选"</span>,</span><br><span class="line"><span class="symbol">            count:</span> <span class="number">70</span></span><br><span class="line">        &#125;]    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在data循环中再次遇到“网页设计与制作”时，调用<code>foramatData[&quot;网页设计与制作&quot;].types.push()</code>,就可将新对象存到对应数组中.<br>然后再查询一次得到sum，放到<code>formatData</code>对应对象中去。<br>代码如下：</p>
+<blockquote>
+<p>formatData:格式化后的数据<br>questionTypes:存放题目类型列表<br>types:合并后的数组题目类型数组<br>item:types中的一个对象</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">questionBankList.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> questionTypes = [];</span><br><span class="line">        <span class="keyword">var</span> formatDatas = &#123;&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> types = [];</span><br><span class="line">            <span class="keyword">var</span> item=&#123;&#125;;</span><br><span class="line">            item.type_name = data[i].question_type;</span><br><span class="line">            item.count = data[i].count;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> knowledge_point = data[i].knowledge_point;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (questionTypes.indexOf(knowledge_point) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                questionTypes.push(knowledge_point);</span><br><span class="line">                formatDatas[knowledge_point] = &#123;</span><br><span class="line">                    knowledge_point: knowledge_point,</span><br><span class="line">                    types:types</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            formatDatas[knowledge_point].types.push(item);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> oneQuestionBankSum = studentPaper.getOneQuestionBankSum();   </span><br><span class="line">        oneQuestionBankSum.then(<span class="function"><span class="keyword">function</span>(<span class="params">sum</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; sum.length; i++) &#123;</span><br><span class="line">                    formatDatas[sum[i].knowledge_point].sum= sum[i].sum;</span><br><span class="line">                &#125;  </span><br><span class="line">                res.json(formatDatas);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="记录–一个简单的数据封装">记录–一个简单的数据封装</h1>]]>
+    
+    </summary>
+    
+      <category term="record" scheme="http://shirleyYing.com/tags/record/"/>
+    
+      <category term="js" scheme="http://shirleyYing.com/categories/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[用box-sizing 解决移动端不同屏幕手机适配问题]]></title>
+    <link href="http://shirleyYing.com/2016/01/10/box-sizing/"/>
+    <id>http://shirleyYing.com/2016/01/10/box-sizing/</id>
+    <published>2016-01-10T09:45:22.000Z</published>
+    <updated>2018-01-27T13:35:01.767Z</updated>
+    <content type="html"><![CDATA[<h1 id="用box-sizing_解决移动端不同屏幕手机适配问题">用box-sizing 解决移动端不同屏幕手机适配问题</h1><p>手机页面由于要适配不同屏幕大小。所以宽度都要用百分数，如果遇到占满整个屏幕宽度，还是有border的div要怎么办？</p>
+<a id="more"></a>
+<p>css3里面的一个属性：<code>box-sizing</code> 直接解决了问题。<br>比方说这样一个页面。<br><img src="/imgs/mobile.jpg" alt="view"><br>移动端的h5页面，需要设配不同屏幕尺寸，但是<code>width</code> 又是不算border的。那也就是说<code>width:100%</code> 就不能用了，但是我怎么知道有多少尺寸等着我啊。多次尝试未果，打算用背景图来解决。牛逼闪闪的师父给了我这个建议：<strong>box-sizing</strong>。</p>
+<p>box-sizing：content-box| border-box</p>
+<p>content-box: 就是现代浏览器盒模型的计算方法，width就是你自己写的width，padding，border都不算在里面。</p>
+<p>border-box： width是总的占的尺寸。所有都算。</p>
+<p>像这个页面，上半部分绿色的框需要占满整个屏幕，下半部分press按钮又需要在下半部分的高度里垂直居中。刚刚的box-sizing搞定了上半部分。下半部分的垂直居中，同样遇到了 <code>height</code> 不固定的问题。用flex做垂直居中是个比较好的选择。同样需要用到  <code>box-sizing</code></p>
+<h3 id="解决方案">解决方案</h3><p>把上半部分的高度用px固定死当然会适配几种尺寸，然后下半部分用一个div。绝对定位，占满整个屏幕，然后padding-top把它的位置调下来。</p>
+<p>box-sizing 又一次起作用了。如果不加box-sizing，你的高度就要爆掉了。然后flex垂直居中，完美。</p>
+<p>代码就不上了，比较懒~</p>
+<h3 id="另一个问题">另一个问题</h3><p>做到这还遇到了另外一个问题：div 层次的问题。<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">.top</span>&#123;</span><br><span class="line">    <span class="string">.loading</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">.bottom</span>&#123;</span><br><span class="line">    <span class="string">.button</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>首先效果是先出loading几秒，然后淡入首页，但是loading出现的时候，下面的bottom块也在。第一个想法肯定是加z-index了，但是，加了没用。<br>原因：<br>它放在top里面。top和bottom是平级的。也就是说，用了绝对定位后，bottom就在top前面了。top里面的loading index再高，父元素不给力，也是没办法的。所以，在top上加<code>z-index</code> 就好了。之前看过一篇特别棒的写 z-index的文章，贴在这里。<br>[<a href="http://www.w3cplus.com/css/what-no-one-told-you-about-z-index.html" target="_blank" rel="noopener">http://www.w3cplus.com/css/what-no-one-told-you-about-z-index.html</a>]</p>
+<p>第一次做移动端的页面，确实要考虑很多适配问题，之后遇到其他的，继续记录。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="用box-sizing_解决移动端不同屏幕手机适配问题">用box-sizing 解决移动端不同屏幕手机适配问题</h1><p>手机页面由于要适配不同屏幕大小。所以宽度都要用百分数，如果遇到占满整个屏幕宽度，还是有border的div要怎么办？</p>]]>
+    
+    </summary>
+    
+      <category term="css3" scheme="http://shirleyYing.com/tags/css3/"/>
+    
+      <category term="html5" scheme="http://shirleyYing.com/tags/html5/"/>
+    
+      <category term="mobile" scheme="http://shirleyYing.com/tags/mobile/"/>
+    
+      <category term="terminal" scheme="http://shirleyYing.com/tags/terminal/"/>
+    
+      <category term="css3" scheme="http://shirleyYing.com/categories/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[flex属性介绍]]></title>
+    <link href="http://shirleyYing.com/2015/12/13/flex/"/>
+    <id>http://shirleyYing.com/2015/12/13/flex/</id>
+    <published>2015-12-12T16:00:00.000Z</published>
+    <updated>2018-01-27T13:35:01.767Z</updated>
+    <content type="html"><![CDATA[<h1 id="flex学习笔记">flex学习笔记</h1><h2 id="前言">前言</h2><p>flexmodel ：自适应盒模型<br>分为主轴和侧轴，也就是横轴和侧轴。用来决定子元素的排列方式。<br><img src="/imgs/CSS3-Flexbox-Model.jpg" alt="CSS3-Flexbox-Model"></p>
+<p>PS:最近在做的页面主要以一列展示为主，所以主要用到了垂直居中相关的内容。和以前用margin的方式相比，确实好用太多。本文所写属性也和垂直居中相关。还有些属性并没有写全。更多属性，请参考：<a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="_blank" rel="noopener">a-visual-guide-to-css3-flexbox-properties</a>.<br><strong>支持情况：</strong></p>
+<p>Chrome 29+<br>Firefox 28+<br>Internet Explorer 11+<br>Opera 17+<br>Safari 6.1+ (prefixed with -webkit-)<br>Android 4.4+<br>iOS 7.1+ (prefixed with -webkit-)<br>可以在 <a href="http://caniuse.com/flexbox" target="_blank" rel="noopener">here</a>看到更多细节和兼容性的内容。</p>
+<h2 id="属性介绍">属性介绍</h2><h3 id="flex">flex</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用来开启盒模型，用在flex容器中。</p>
+<h3 id="inline-flex">inline-flex</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-inline-flex; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">display</span>: inline-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>像内联元素一样使用它。<br>以上两个需要在父元素中使用，它的直系孩子会自动成为flex文档流，成为可伸缩的项目。</p>
+<h3 id="flex-direction">flex-direction</h3><p>定义内部文档流的排序方向。取值：row，column，row-reverse，column-reverse<br>默认值: <code>row</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-flex-direction</span>: row; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>:         row;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>flexbox-flex-direction-row：</p>
+<p><img src="/imgs/flexbox-flex-direction-row.jpg" alt="flexbox-flex-direction-row"><br>flexbox-flex-direction-column:</p>
+<p><img src="/imgs/flexbox-flex-direction-column.jpg" alt="flexbox-flex-direction-column"></p>
+<h3 id="flex-wrap">flex-wrap</h3><p>定义是否换行。<br>values:<code>wrap-reverse</code>, <code>wrap</code>.<br>default values:<code>nowarp</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-flex-direction</span>: row; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>:         row;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="justify-content">justify-content</h3><p>用在容器中定义子元素排列顺序。<br>values:<br><code>flex-start</code>:从主轴开始的位置排列,<br><code>flex-end</code>:从侧轴开始的位置排列,<br><code>center</code>:剧中排列，height延展至父容器，width不延展<br><code>space-between：居中排列，height延展至父容器，width不延展，但是用间距填满主轴方向。</code>space-around<code>：和</code>space-between<code>一样，唯一的不同是每个item 左右两边会有间距。
+default values:</code>flex-start`<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-justify-content</span>: flex-start; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">justify-content</span>:         flex-start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>flex-start:<br><img src="/imgs/flexbox-justify-content-flex-start.jpg" alt="flexbox-justify-content-flex-start"><br>flex-end:<br><img src="/imgs/flexbox-justify-content-flex-end.jpg" alt="flexbox-justify-content-flex-end"><br>cneter:<br><img src="/imgs/flexbox-justify-content-center.jpg" alt="flexbox-justify-content-center"><br>space-between:<br><img src="/imgs/flexbox-justify-content-space-between.jpg" alt="flexbox-justify-content-space-between"><br>space-around:<br><img src="/imgs/flexbox-justify-content-space-around.jpg" alt="flexbox-justify-content-space-around"></p>
+<h3 id="align-item">align-item</h3><p> 定义容器中子元素的垂直（侧轴）对齐方式。可以用于设置子元素的垂直居中。和<code>justify-content</code> 配合使用。前者确定子元素的水平排列方式，后者确定子元素的垂直对齐方式。<br> values:<code>stretch</code>,<code>flex-start</code>,<code>flex-end</code>,<code>center</code>,<code>baseline</code><br> <code>stretch:</code>： 侧轴方向延展。<br> <code>flex-start</code>： 沿侧轴开始的位置排列，靠上<br> <code>flex-end</code>： 沿侧轴结束的位置排列，靠下<br> <code>center</code>：垂直居中<br> <code>baseline</code>：每个item的文字基线对齐。<br>default values: <code>stretch</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">   <span class="attribute">-webkit-align-items</span>: stretch; <span class="comment">/* Safari */</span></span><br><span class="line">    <span class="attribute">align-items</span>:         stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>stretch:<br><img src="/imgs/flexbox-align-items-stretch.jpg" alt="flexbox-align-items-stretch"><br>flex-start:<br><img src="/imgs/flexbox-align-items-flex-start.jpg" alt="flexbox-align-items-flex-start"><br>flex-end:<br><img src="/imgs/flexbox-align-items-flex-end.jpg" alt="flexbox-align-items-flex-end"><br>center:<br><img src="/imgs/flexbox-align-items-center.jpg" alt="flexbox-align-items-center"><br>baseline：<br><img src="/imgs/flexbox-align-items-baseline.jpg" alt="flexbox-align-items-baseline"></p>
+<h2 id="example">example</h2><p>垂直居中的例子：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:flex;</span><br><span class="line">    <span class="attribute">justify-content</span> :space-between;</span><br><span class="line">    <span class="attribute">align-items</span>：center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只是简单地展示效果，并没有做兼容性考虑。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="flex学习笔记">flex学习笔记</h1><h2 id="前言">前言</h2><p>flexmodel ：自适应盒模型<br>分为主轴和侧轴，也就是横轴和侧轴。用来决定子元素的排列方式。<br><img src="/imgs/CSS3-Flexbox-Mod]]>
+    </summary>
+    
+      <category term="前端" scheme="http://shirleyYing.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="移动端" scheme="http://shirleyYing.com/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+      <category term="css3" scheme="http://shirleyYing.com/tags/css3/"/>
+    
+      <category term="flex" scheme="http://shirleyYing.com/tags/flex/"/>
+    
+      <category term="css3" scheme="http://shirleyYing.com/categories/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[用hexo搭建自己的个人博客]]></title>
+    <link href="http://shirleyYing.com/2015/10/07/hexo-bolg-github/"/>
+    <id>http://shirleyYing.com/2015/10/07/hexo-bolg-github/</id>
+    <published>2015-10-07T13:39:15.000Z</published>
+    <updated>2018-01-28T14:00:50.000Z</updated>
+    <content type="html"><![CDATA[<p>之前用gitbook发布到github上写笔记，没能找到怎么高亮显示代码块，总觉得不爽，最后还是用了hexo，没想到非常方便，网上教程很多。搭建完成后，也来写一篇当做纪念。</p>
+<a id="more"></a>
+<h1 id="准备工作">准备工作</h1><ol>
+<li>git安装 <code>v 1.9.5</code> </li>
+<li>node安装 <code>v 0.4.1</code></li>
+<li>hexo安装 <code>v 3.1.1</code></li>
+</ol>
+<h1 id="搭建">搭建</h1><h2 id="初始化文件夹">初始化文件夹</h2><p>安装完成后，根据自己喜好建立目录（如<code>D:Git\hexo</code>），进入<code>Git Shell</code>切换到该路径下<code>D:Git\hexo</code>执行以下指令,<code>Hexo</code> 将会在指定文件夹中新建所需要的文件,若未指定文件夹，将在当前路径中完成初始化。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>启动本地服务器 <code>hexo server</code>  本地查看效果,输入<code>http://localhost：4000</code></p>
+<h2 id="更换主题">更换主题</h2><p>使用了pacman的主题 <a href="http://yangjian.me/pacman/hello/introducing-pacman-theme/" target="_blank" rel="noopener">pacman主题介绍</a></p>
+<h3 id="遇到的问题">遇到的问题</h3><ol>
+<li><p>博客根目录下的config.yml中 没有<code>stylus</code>属性.    在文件最后添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  stylus:</span><br><span class="line">compress: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码片段不会高亮显示。在<code>theme/pacman/_config.yml</code> 中添加</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  auto_detect:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  tab_replace:</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>author.jpg 找不到。路径加一级 <code>author_img: ../img/author.jpg</code> </p>
+</li>
+</ol>
+<h3 id="主题修改">主题修改</h3><h4 id="创建标签和归档">创建标签和归档</h4><p>menu 默认没有启用<code>/tags</code> 和 <code>/categories</code><br>页面，如果需要启用请在博客目录下的source文件夹中分别建立<code>tags</code> 和 <code>categories</code>文件夹每个文件夹中分别包含一个index.md文件。内容为：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">layout:</span> <span class="string">tags</span> <span class="string">(或categories)</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span> <span class="string">(或categories)</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="编写博客">编写博客</h2><ol>
+<li>进入bolg文件夹下  <code>hexo new &quot; article&quot;</code></li>
+<li>去source文件下中找到article.md </li>
+<li>编写tags 和catagory</li>
+<li>写完后，hexo generate</li>
+<li>发布 hexo deploy<br>eg：<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">tags:</span> [css3, html5, mobile, terminal]</span><br><span class="line">categories: css3</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>常用命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"postName"</span> <span class="comment">#新建文章</span></span><br><span class="line">hexo new page <span class="string">"pageName"</span> <span class="comment">#新建页面</span></span><br><span class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></span><br><span class="line">hexo server <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></span><br><span class="line">hexo deploy <span class="comment">#将.deploy目录部署到GitHub</span></span><br></pre></td></tr></table></figure></p>
+<p>发布显示更多,在你觉得适合的位置插入</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="插件安装">插件安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一键发布到github上</span></span><br><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line"><span class="comment"># rss 插件</span></span><br><span class="line">$ npm install hexo-generator-feed</span><br><span class="line"><span class="comment"># 站点地图插件</span></span><br><span class="line">$ npm install hexo-generator-sitemap</span><br></pre></td></tr></table></figure>
+<h2 id="插件设置">插件设置</h2><h3 id="rss设置">rss设置</h3><ol>
+<li><p>编辑根目录下的<code>_config.yml</code>,添加</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugins:</span><br><span class="line"><span class="bullet">- </span>hexo-generator-feed</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>themes/pacman/_config.yml</code>中，编辑 <code>rss: /atom.xml</code></p>
+</li>
+<li>在<code>themes/pacman/layout/_partial/header.ejs</code>中，<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span>之间，添加一样代码<span class="tag">&lt;<span class="name">li</span>&gt;</span> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/atom.xml"</span>&gt;</span>RSS<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="sitemap设置">sitemap设置</h3><ol>
+<li>编辑根目录下的<code>_config.yml</code>,添加<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugins:</span><br><span class="line"><span class="bullet">- </span>hexo-generator-sitemap</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="发布到github">发布到github</h2><ol>
+<li>在github上建立仓库，仓库名必须为『your_user_name.github.io』</li>
+<li>安装<code>hexo-deployer-git</code>插件，在根目录下的<code>_config.yml</code>,添加<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:shirleyYing/shirleyYing.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>注意</strong>: <code>type:git</code> 不能是<code>github</code><br>插件只是将publish文件夹的内容发布到github对应仓库中去。</p>
+<h2 id="参考">参考</h2><p>[<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a>]</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>之前用gitbook发布到github上写笔记，没能找到怎么高亮显示代码块，总觉得不爽，最后还是用了hexo，没想到非常方便，网上教程很多。搭建完成后，也来写一篇当做纪念。</p>]]>
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://shirleyYing.com/tags/hexo/"/>
+    
+      <category term="pacman" scheme="http://shirleyYing.com/tags/pacman/"/>
+    
+      <category term="blog" scheme="http://shirleyYing.com/tags/blog/"/>
+    
+      <category term="tools" scheme="http://shirleyYing.com/categories/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[前端ps工具使用技巧]]></title>
+    <link href="http://shirleyYing.com/2015/10/07/ps-cut/"/>
+    <id>http://shirleyYing.com/2015/10/07/ps-cut/</id>
+    <published>2015-10-07T12:53:57.000Z</published>
+    <updated>2018-01-27T13:35:01.768Z</updated>
+    <content type="html"><![CDATA[<h1 id="前端ps工具使用技巧">前端ps工具使用技巧</h1><a id="more"></a>
+<p>使用工具：<strong> PS cc </strong></p>
+<h2 id="PS快捷键">PS快捷键</h2><h3 id="操作图层">操作图层</h3><blockquote>
+<p>v 移动图层 alt +鼠标左键拖动，复制并移动图层，制作雪碧图时很好用。 ctrl+T 缩放当前图层（自由变换模式）</p>
+</blockquote>
+<h3 id="切片技巧：">切片技巧：</h3><ol>
+<li><p>v 用ctrl选中两个或多个图层，ctrl+E 合并图层<br>alt +双击左键 弹出切片选项，设定切片宽高，并且可以命名。<br>调整切片位置，用键盘上下左右键可以精确调整</p>
+</li>
+<li><p>切sprite图时，通常新建一个文件存放，可以直接在原文件上选中图层复制后，拖到新的文件中，<strong>图像–》裁切–》基于透明像素</strong> 可以去掉多余的透明背景。</p>
+</li>
+</ol>
+<h3 id="工具类切换">工具类切换</h3><ol>
+<li>c       切片</li>
+<li>v      移动图层</li>
+<li>i 吸管，标尺 </li>
+<li>h  抓手工具</li>
+<li>同组工具切换 shift +字母： shift+i    切换吸管和标尺**</li>
+</ol>
+<p>参考文章<a href="http://www.w3cfuns.com/article-5600020-1-1.html" target="_blank" rel="noopener">关于web切图你需要知道的几件事情</a></p>
+<h2 id="切图保存格式问题">切图保存格式问题</h2><p>前几天遇到切图保存后有明显锯齿的情况，本来透明背景图保存过后就变了灰色不透明，两个的原因都是因为保存切片格式问题。习惯保存<code>png8</code>，这两种情况保存成<code>png24</code>就ok了。</p>
+<hr>
+<p><strong> 保存格式大体注意 </strong></p>
+<p>jpg对应色彩十分丰富，对比度强烈的图片<br>png8 对应小图标，纯色为主的图片，<br>png24 是 有2的24方中颜色值的意思，颜色粒度更细腻，图片细节处较好。和jpg适用场景相似，但是，同样图片，jpg保存的要比png24 的小。</p>
+<p>具体差异淘宝ued有篇文章很赞 <a href="http://ued.taobao.org/blog/2010/12/jpg_png/" target="_blank" rel="noopener">图片格式与设计那点事儿</a></p>
+<h2 id="PS切图神器">PS切图神器</h2><p><code>Cut And Slice Me</code>  一个ps插件 cs6以上都可以用。试了一下，还挺简单的，但是所有组同时切和子集切这两个不好使，只有单个切得那个好用。</p>
+<p>使用教程：<a href="http://www.boxui.com/ui-resource/design-aid/18666.html" target="_blank" rel="noopener">Cut And Slice Me</a></p>
+<p>PScc 14.2.1版本可以自动生成切片，也是选中图层就可以生成。也是有那么一点点用。</p>
+<p><strong> 这篇ps工具技巧主要围绕切图展开。切图神器都有点鸡肋。个人觉得如果要切小图标的话还是自己拖拽到新文件比较方便。偶尔用一下切图神器也是不错的。</strong></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="前端ps工具使用技巧">前端ps工具使用技巧</h1>]]>
+    
+    </summary>
+    
+      <category term="前端" scheme="http://shirleyYing.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="PScc" scheme="http://shirleyYing.com/tags/PScc/"/>
+    
+      <category term="切图" scheme="http://shirleyYing.com/tags/%E5%88%87%E5%9B%BE/"/>
+    
+      <category term="tools" scheme="http://shirleyYing.com/categories/tools/"/>
+    
+  </entry>
+  
+</feed>
