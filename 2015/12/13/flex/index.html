@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css3,前端,移动端,flex," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="fina's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="flex学习笔记">
+<meta name="keywords" content="css3,前端,移动端,flex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flex属性介绍">
+<meta property="og:url" content="https://shirleyYing.com/2015/12/13/flex/index.html">
+<meta property="og:site_name" content="fina&#39;s Blog">
+<meta property="og:description" content="flex学习笔记">
+<meta property="og:image" content="https://shirleyying.com/imgs/CSS3-Flexbox-Model.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-flex-direction-row.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-flex-direction-column.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-justify-content-flex-start.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-justify-content-flex-end.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-justify-content-center.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-justify-content-space-between.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-justify-content-space-around.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-align-items-stretch.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-align-items-flex-start.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-align-items-flex-end.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-align-items-center.jpg">
+<meta property="og:image" content="https://shirleyying.com/imgs/flexbox-align-items-baseline.jpg">
+<meta property="og:updated_time" content="2018-01-31T12:06:36.271Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flex属性介绍">
+<meta name="twitter:description" content="flex学习笔记">
+<meta name="twitter:image" content="https://shirleyying.com/imgs/CSS3-Flexbox-Model.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shirleyYing.com/2015/12/13/flex/"/>
+
+
+
+
+
+  <title>flex属性介绍 | fina's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">fina's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">keep Calm</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shirleyYing.com/2015/12/13/flex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangying">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fina's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">flex属性介绍</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-13T00:00:00+08:00">
+                2015-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css3/" itemprop="url" rel="index">
+                    <span itemprop="name">css3</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>flex学习笔记<br><a id="more"></a></p>
+<h1 id="flex学习笔记">flex学习笔记</h1><h2 id="前言">前言</h2><p>flexmodel ：自适应盒模型<br>分为主轴和侧轴，也就是横轴和侧轴。用来决定子元素的排列方式。<br><img src="/imgs/CSS3-Flexbox-Model.jpg" alt="CSS3-Flexbox-Model"></p>
+<p>PS:最近在做的页面主要以一列展示为主，所以主要用到了垂直居中相关的内容。和以前用margin的方式相比，确实好用太多。本文所写属性也和垂直居中相关。还有些属性并没有写全。更多属性，请参考：<a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="_blank" rel="noopener">a-visual-guide-to-css3-flexbox-properties</a>.<br><strong>支持情况：</strong></p>
+<p>Chrome 29+<br>Firefox 28+<br>Internet Explorer 11+<br>Opera 17+<br>Safari 6.1+ (prefixed with -webkit-)<br>Android 4.4+<br>iOS 7.1+ (prefixed with -webkit-)<br>可以在 <a href="http://caniuse.com/flexbox" target="_blank" rel="noopener">here</a>看到更多细节和兼容性的内容。</p>
+<h2 id="属性介绍">属性介绍</h2><h3 id="flex">flex</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用来开启盒模型，用在flex容器中。</p>
+<h3 id="inline-flex">inline-flex</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-inline-flex; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">display</span>: inline-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>像内联元素一样使用它。<br>以上两个需要在父元素中使用，它的直系孩子会自动成为flex文档流，成为可伸缩的项目。</p>
+<h3 id="flex-direction">flex-direction</h3><p>定义内部文档流的排序方向。取值：row，column，row-reverse，column-reverse<br>默认值: <code>row</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-flex-direction</span>: row; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>:         row;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>flexbox-flex-direction-row：</p>
+<p><img src="/imgs/flexbox-flex-direction-row.jpg" alt="flexbox-flex-direction-row"><br>flexbox-flex-direction-column:</p>
+<p><img src="/imgs/flexbox-flex-direction-column.jpg" alt="flexbox-flex-direction-column"></p>
+<h3 id="flex-wrap">flex-wrap</h3><p>定义是否换行。<br>values:<code>wrap-reverse</code>, <code>wrap</code>.<br>default values:<code>nowarp</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-flex-direction</span>: row; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>:         row;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="justify-content">justify-content</h3><p>用在容器中定义子元素排列顺序。<br>values:<br><code>flex-start</code>:从主轴开始的位置排列,<br><code>flex-end</code>:从侧轴开始的位置排列,<br><code>center</code>:剧中排列，height延展至父容器，width不延展<br><code>space-between：居中排列，height延展至父容器，width不延展，但是用间距填满主轴方向。</code>space-around<code>：和</code>space-between<code>一样，唯一的不同是每个item 左右两边会有间距。
+default values:</code>flex-start`<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-justify-content</span>: flex-start; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">justify-content</span>:         flex-start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>flex-start:<br><img src="/imgs/flexbox-justify-content-flex-start.jpg" alt="flexbox-justify-content-flex-start"><br>flex-end:<br><img src="/imgs/flexbox-justify-content-flex-end.jpg" alt="flexbox-justify-content-flex-end"><br>cneter:<br><img src="/imgs/flexbox-justify-content-center.jpg" alt="flexbox-justify-content-center"><br>space-between:<br><img src="/imgs/flexbox-justify-content-space-between.jpg" alt="flexbox-justify-content-space-between"><br>space-around:<br><img src="/imgs/flexbox-justify-content-space-around.jpg" alt="flexbox-justify-content-space-around"></p>
+<h3 id="align-item">align-item</h3><p> 定义容器中子元素的垂直（侧轴）对齐方式。可以用于设置子元素的垂直居中。和<code>justify-content</code> 配合使用。前者确定子元素的水平排列方式，后者确定子元素的垂直对齐方式。<br> values:<code>stretch</code>,<code>flex-start</code>,<code>flex-end</code>,<code>center</code>,<code>baseline</code><br> <code>stretch:</code>： 侧轴方向延展。<br> <code>flex-start</code>： 沿侧轴开始的位置排列，靠上<br> <code>flex-end</code>： 沿侧轴结束的位置排列，靠下<br> <code>center</code>：垂直居中<br> <code>baseline</code>：每个item的文字基线对齐。<br>default values: <code>stretch</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">   <span class="attribute">-webkit-align-items</span>: stretch; <span class="comment">/* Safari */</span></span><br><span class="line">    <span class="attribute">align-items</span>:         stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>stretch:<br><img src="/imgs/flexbox-align-items-stretch.jpg" alt="flexbox-align-items-stretch"><br>flex-start:<br><img src="/imgs/flexbox-align-items-flex-start.jpg" alt="flexbox-align-items-flex-start"><br>flex-end:<br><img src="/imgs/flexbox-align-items-flex-end.jpg" alt="flexbox-align-items-flex-end"><br>center:<br><img src="/imgs/flexbox-align-items-center.jpg" alt="flexbox-align-items-center"><br>baseline：<br><img src="/imgs/flexbox-align-items-baseline.jpg" alt="flexbox-align-items-baseline"></p>
+<h2 id="example">example</h2><p>垂直居中的例子：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:flex;</span><br><span class="line">    <span class="attribute">justify-content</span> :space-between;</span><br><span class="line">    <span class="attribute">align-items</span>：center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只是简单地展示效果，并没有做兼容性考虑。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css3/" rel="tag"># css3</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/移动端/" rel="tag"># 移动端</a>
+          
+            <a href="/tags/flex/" rel="tag"># flex</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/07/hexo-bolg-github/" rel="next" title="用hexo搭建自己的个人博客">
+                <i class="fa fa-chevron-left"></i> 用hexo搭建自己的个人博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/10/box-sizing/" rel="prev" title="用box-sizing 解决移动端不同屏幕手机适配问题">
+                用box-sizing 解决移动端不同屏幕手机适配问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">zhangying</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">Kategorien</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">Tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#flex学习笔记"><span class="nav-number">1.</span> <span class="nav-text">flex学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性介绍"><span class="nav-number">1.2.</span> <span class="nav-text">属性介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex"><span class="nav-number">1.2.1.</span> <span class="nav-text">flex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inline-flex"><span class="nav-number">1.2.2.</span> <span class="nav-text">inline-flex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-direction"><span class="nav-number">1.2.3.</span> <span class="nav-text">flex-direction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-wrap"><span class="nav-number">1.2.4.</span> <span class="nav-text">flex-wrap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#justify-content"><span class="nav-number">1.2.5.</span> <span class="nav-text">justify-content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#align-item"><span class="nav-number">1.2.6.</span> <span class="nav-text">align-item</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">1.3.</span> <span class="nav-text">example</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhangying</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

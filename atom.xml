@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[shirley's Blog]]></title>
+  <title><![CDATA[fina's Blog]]></title>
   <subtitle><![CDATA[keep Calm]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://shirleyYing.com/"/>
-  <updated>2018-01-27T13:44:42.057Z</updated>
-  <id>http://shirleyYing.com/</id>
+  <link href="https://shirleyYing.com/"/>
+  <updated>2018-01-31T12:07:50.480Z</updated>
+  <id>https://shirleyYing.com/</id>
   
   <author>
     <name><![CDATA[zhangying]]></name>
@@ -16,28 +16,32 @@
   
   <entry>
     <title><![CDATA[ES6 模块加载机制]]></title>
-    <link href="http://shirleyYing.com/2018/01/08/es6-modules-load/"/>
-    <id>http://shirleyYing.com/2018/01/08/es6-modules-load/</id>
+    <link href="https://shirleyYing.com/2018/01/08/es6-modules-load/"/>
+    <id>https://shirleyYing.com/2018/01/08/es6-modules-load/</id>
     <published>2018-01-08T14:53:49.000Z</published>
-    <updated>2018-01-27T13:44:42.057Z</updated>
+    <updated>2018-01-31T12:07:50.480Z</updated>
     <content type="html"><![CDATA[<p>近来在工作中需要使用angular，并且使用了一个表格组件，对，juqery的插件datatable，遇到了文件引用问题。才发现其实自己还没有很了解ES6。趁此机会，又去了解了一次es6模块加载机制，记录如下。<br><a id="more"></a></p>
-<h2 id="问题重现">问题重现</h2><h2 id="探究">探究</h2><h2 id="原理">原理</h2>]]></content>
+<h2 id="探究">探究</h2><h3 id="问题">问题</h3><p>工作中使用了kibana这个 es 的前端库，使用angualr写的。二次开发需要用到表格，就选了<code>angular-datatable</code>，就是用angular的写法封装了jquery的datatable 插件。但是，搞不懂angular的逻辑，居然，包了一层还需要自己引入datatable插件。直接import就不管用。运行起来就报datatable找不到的错误。</p>
+<h3 id="原因">原因</h3><p>源码中直接使用了datatable组件，这也就是说，angular-datatable默认全局下有datatable对象。这确实是之前传统juqery插件的用法，用script标签引用插件进来，都是挂在window对象上的。但是对于es6模块加载的方式，import的对象都是对当前文件有用的局部对象，所以<code>import datatables from &#39;datatables.net&#39;</code> 的方式，是无效的。需要自己挂载在window对象上。</p>
+<p>另外一种方式。就是以文件方式引入 <code>import &#39;../node_modules/datatables.net&#39;</code>这种方式会执行改文件，文件中有挂载到window对象上的逻辑，所以只要执行了。也会实现挂载到window对象上的效果。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window<span class="selector-class">.datatables</span> = datatables</span><br></pre></td></tr></table></figure></p>
+]]></content>
     <summary type="html">
     <![CDATA[<p>近来在工作中需要使用angular，并且使用了一个表格组件，对，juqery的插件datatable，遇到了文件引用问题。才发现其实自己还没有很了解ES6。趁此机会，又去了解了一次es6模块加载机制，记录如下。<br>]]>
     
     </summary>
     
-      <category term="ES6模块加载机制" scheme="http://shirleyYing.com/tags/ES6%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
+      <category term="ES6模块加载机制" scheme="https://shirleyYing.com/tags/ES6%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[2017总结]]></title>
-    <link href="http://shirleyYing.com/2017/12/29/2017-summary/"/>
-    <id>http://shirleyYing.com/2017/12/29/2017-summary/</id>
+    <link href="https://shirleyYing.com/2017/12/29/2017-summary/"/>
+    <id>https://shirleyYing.com/2017/12/29/2017-summary/</id>
     <published>2017-12-29T13:30:21.000Z</published>
-    <updated>2018-01-27T13:35:01.767Z</updated>
-    <content type="html"><![CDATA[<h3 id="关于工作">关于工作</h3><p>  工作上平平常常，没什么出彩的事，经历了转岗，背了差绩效。本来以为铁打的营盘流水的兵，来来去去不是很正常的事吗。结果，却比意料中难了许多，恶心了许多。曾经敬佩，喜欢的人啊，没想到最后人设崩塌，还能因为什么呢？因为自己的利益啊。真真假假，看不清楚。总之是走了，就向前看吧。</p>
+    <updated>2018-01-31T12:04:34.669Z</updated>
+    <content type="html"><![CDATA[<p>年终总结<br><a id="more"></a></p>
+<h3 id="关于工作">关于工作</h3><p>  工作上平平常常，没什么出彩的事，经历了转岗，背了差绩效。本来以为铁打的营盘流水的兵，来来去去不是很正常的事吗。结果，却比意料中难了许多，恶心了许多。曾经敬佩，喜欢的人啊，没想到最后人设崩塌，还能因为什么呢？因为自己的利益啊。真真假假，看不清楚。总之是走了，就向前看吧。</p>
 <p>  到了新的地方，做出一些成绩来。好好努力，买股票，买包买口红</p>
 <h3 id="关于学习">关于学习</h3><p>这一年，学习放松了很多，也花时间看了一些东西但是看完就完了，没有输出，感觉像是没有看。<br>做的东西太少，执行力太差。<br>学做了一些node的东西，也就仅限于搭了一个web服务。其他的啥也没做，还是皮毛。<br>但总的来说，确实是比去年好一些了吧。不再害怕遇到问题，不再逃避，心中有了一些方法和感觉。做起来的主观感受好了很多。</p>
 <h3 id="关于生活">关于生活</h3><ol>
@@ -60,37 +64,39 @@
 </ol>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="关于工作">关于工作</h3><p>  工作上平平常常，没什么出彩的事，经历了转岗，背了差绩效。本来以为铁打的营盘流水的兵，来来去去不是很正常的事吗。结果，却比意料中难了许多，恶心了许多。曾经敬佩，喜欢的人啊，没想到最后人设崩塌，还能因为什么呢？因为自己的利益啊。]]>
+    <![CDATA[<p>年终总结<br>]]>
+    
     </summary>
     
-      <category term="life" scheme="http://shirleyYing.com/tags/life/"/>
+      <category term="life" scheme="https://shirleyYing.com/tags/life/"/>
     
-      <category term="life" scheme="http://shirleyYing.com/categories/life/"/>
+      <category term="life" scheme="https://shirleyYing.com/categories/life/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[new life]]></title>
-    <link href="http://shirleyYing.com/2017/12/29/new-life/"/>
-    <id>http://shirleyYing.com/2017/12/29/new-life/</id>
+    <link href="https://shirleyYing.com/2017/12/29/new-life/"/>
+    <id>https://shirleyYing.com/2017/12/29/new-life/</id>
     <published>2017-12-28T16:01:47.000Z</published>
-    <updated>2018-01-27T13:35:01.768Z</updated>
-    <content type="html"><![CDATA[<h1 id="生活琐事">生活琐事</h1><p>今天终于把15年搭的博客源码找回来了，工作一年半，确实没有怎么写东西，想起来了就东写一篇系写一篇。</p>
-<p>总是要制定不切实际的计划，然后意料之中又无比难受的放弃，并且否定自己。曾经想写个自己的博客前后台系统。放到腾讯云上，<br>但是，环境折腾了一晚上，就不了了之了。还是先找个地方写东西，其他的慢慢折腾。记录是一定要有的。<br>t</p>
+    <updated>2018-01-31T12:06:00.266Z</updated>
+    <content type="html"><![CDATA[<p>生活琐事<br><a id="more"></a></p>
+<h1 id="生活琐事">生活琐事</h1><p>今天终于把15年搭的博客源码找回来了，工作一年半，确实没有怎么写东西，想起来了就东写一篇系写一篇。</p>
+<p>总是要制定不切实际的计划，然后意料之中又无比难受的放弃，并且否定自己。曾经想写个自己的博客前后台系统。放到腾讯云上，<br>但是，环境折腾了一晚上，就不了了之了。还是先找个地方写东西，其他的慢慢折腾。记录是一定要有的。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="生活琐事">生活琐事</h1><p>今天终于把15年搭的博客源码找回来了，工作一年半，确实没有怎么写东西，想起来了就东写一篇系写一篇。</p>
-<p>总是要制定不切实际的计划，然后意料之中又无比难受的放弃，并且否定自己。曾经想写个自己的博客前后台系统。放到腾讯云上]]>
+    <![CDATA[<p>生活琐事<br>]]>
+    
     </summary>
     
-      <category term="life" scheme="http://shirleyYing.com/tags/life/"/>
+      <category term="life" scheme="https://shirleyYing.com/tags/life/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[记录--一个简单的数据封装]]></title>
-    <link href="http://shirleyYing.com/2016/06/02/data-processing/"/>
-    <id>http://shirleyYing.com/2016/06/02/data-processing/</id>
+    <link href="https://shirleyYing.com/2016/06/02/data-processing/"/>
+    <id>https://shirleyYing.com/2016/06/02/data-processing/</id>
     <published>2016-06-02T04:25:26.000Z</published>
     <updated>2018-01-27T13:35:01.767Z</updated>
     <content type="html"><![CDATA[<h1 id="记录–一个简单的数据封装">记录–一个简单的数据封装</h1><a id="more"></a>
@@ -108,16 +114,16 @@
     
     </summary>
     
-      <category term="record" scheme="http://shirleyYing.com/tags/record/"/>
+      <category term="record" scheme="https://shirleyYing.com/tags/record/"/>
     
-      <category term="js" scheme="http://shirleyYing.com/categories/js/"/>
+      <category term="js" scheme="https://shirleyYing.com/categories/js/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[用box-sizing 解决移动端不同屏幕手机适配问题]]></title>
-    <link href="http://shirleyYing.com/2016/01/10/box-sizing/"/>
-    <id>http://shirleyYing.com/2016/01/10/box-sizing/</id>
+    <link href="https://shirleyYing.com/2016/01/10/box-sizing/"/>
+    <id>https://shirleyYing.com/2016/01/10/box-sizing/</id>
     <published>2016-01-10T09:45:22.000Z</published>
     <updated>2018-01-27T13:35:01.767Z</updated>
     <content type="html"><![CDATA[<h1 id="用box-sizing_解决移动端不同屏幕手机适配问题">用box-sizing 解决移动端不同屏幕手机适配问题</h1><p>手机页面由于要适配不同屏幕大小。所以宽度都要用百分数，如果遇到占满整个屏幕宽度，还是有border的div要怎么办？</p>
@@ -139,25 +145,26 @@
     
     </summary>
     
-      <category term="css3" scheme="http://shirleyYing.com/tags/css3/"/>
+      <category term="css3" scheme="https://shirleyYing.com/tags/css3/"/>
     
-      <category term="html5" scheme="http://shirleyYing.com/tags/html5/"/>
+      <category term="html5" scheme="https://shirleyYing.com/tags/html5/"/>
     
-      <category term="mobile" scheme="http://shirleyYing.com/tags/mobile/"/>
+      <category term="mobile" scheme="https://shirleyYing.com/tags/mobile/"/>
     
-      <category term="terminal" scheme="http://shirleyYing.com/tags/terminal/"/>
+      <category term="terminal" scheme="https://shirleyYing.com/tags/terminal/"/>
     
-      <category term="css3" scheme="http://shirleyYing.com/categories/css3/"/>
+      <category term="css3" scheme="https://shirleyYing.com/categories/css3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[flex属性介绍]]></title>
-    <link href="http://shirleyYing.com/2015/12/13/flex/"/>
-    <id>http://shirleyYing.com/2015/12/13/flex/</id>
+    <link href="https://shirleyYing.com/2015/12/13/flex/"/>
+    <id>https://shirleyYing.com/2015/12/13/flex/</id>
     <published>2015-12-12T16:00:00.000Z</published>
-    <updated>2018-01-27T13:35:01.767Z</updated>
-    <content type="html"><![CDATA[<h1 id="flex学习笔记">flex学习笔记</h1><h2 id="前言">前言</h2><p>flexmodel ：自适应盒模型<br>分为主轴和侧轴，也就是横轴和侧轴。用来决定子元素的排列方式。<br><img src="/imgs/CSS3-Flexbox-Model.jpg" alt="CSS3-Flexbox-Model"></p>
+    <updated>2018-01-31T12:06:36.271Z</updated>
+    <content type="html"><![CDATA[<p>flex学习笔记<br><a id="more"></a></p>
+<h1 id="flex学习笔记">flex学习笔记</h1><h2 id="前言">前言</h2><p>flexmodel ：自适应盒模型<br>分为主轴和侧轴，也就是横轴和侧轴。用来决定子元素的排列方式。<br><img src="/imgs/CSS3-Flexbox-Model.jpg" alt="CSS3-Flexbox-Model"></p>
 <p>PS:最近在做的页面主要以一列展示为主，所以主要用到了垂直居中相关的内容。和以前用margin的方式相比，确实好用太多。本文所写属性也和垂直居中相关。还有些属性并没有写全。更多属性，请参考：<a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="_blank" rel="noopener">a-visual-guide-to-css3-flexbox-properties</a>.<br><strong>支持情况：</strong></p>
 <p>Chrome 29+<br>Firefox 28+<br>Internet Explorer 11+<br>Opera 17+<br>Safari 6.1+ (prefixed with -webkit-)<br>Android 4.4+<br>iOS 7.1+ (prefixed with -webkit-)<br>可以在 <a href="http://caniuse.com/flexbox" target="_blank" rel="noopener">here</a>看到更多细节和兼容性的内容。</p>
 <h2 id="属性介绍">属性介绍</h2><h3 id="flex">flex</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -180,25 +187,26 @@ default values:</code>flex-start`<br><figure class="highlight css"><table><tr><t
 <p>只是简单地展示效果，并没有做兼容性考虑。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="flex学习笔记">flex学习笔记</h1><h2 id="前言">前言</h2><p>flexmodel ：自适应盒模型<br>分为主轴和侧轴，也就是横轴和侧轴。用来决定子元素的排列方式。<br><img src="/imgs/CSS3-Flexbox-Mod]]>
+    <![CDATA[<p>flex学习笔记<br>]]>
+    
     </summary>
     
-      <category term="前端" scheme="http://shirleyYing.com/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="css3" scheme="https://shirleyYing.com/tags/css3/"/>
     
-      <category term="移动端" scheme="http://shirleyYing.com/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+      <category term="前端" scheme="https://shirleyYing.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="css3" scheme="http://shirleyYing.com/tags/css3/"/>
+      <category term="移动端" scheme="https://shirleyYing.com/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
-      <category term="flex" scheme="http://shirleyYing.com/tags/flex/"/>
+      <category term="flex" scheme="https://shirleyYing.com/tags/flex/"/>
     
-      <category term="css3" scheme="http://shirleyYing.com/categories/css3/"/>
+      <category term="css3" scheme="https://shirleyYing.com/categories/css3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[用hexo搭建自己的个人博客]]></title>
-    <link href="http://shirleyYing.com/2015/10/07/hexo-bolg-github/"/>
-    <id>http://shirleyYing.com/2015/10/07/hexo-bolg-github/</id>
+    <link href="https://shirleyYing.com/2015/10/07/hexo-bolg-github/"/>
+    <id>https://shirleyYing.com/2015/10/07/hexo-bolg-github/</id>
     <published>2015-10-07T13:39:15.000Z</published>
     <updated>2018-01-28T14:00:50.000Z</updated>
     <content type="html"><![CDATA[<p>之前用gitbook发布到github上写笔记，没能找到怎么高亮显示代码块，总觉得不爽，最后还是用了hexo，没想到非常方便，网上教程很多。搭建完成后，也来写一篇当做纪念。</p>
@@ -261,20 +269,20 @@ default values:</code>flex-start`<br><figure class="highlight css"><table><tr><t
     
     </summary>
     
-      <category term="hexo" scheme="http://shirleyYing.com/tags/hexo/"/>
+      <category term="hexo" scheme="https://shirleyYing.com/tags/hexo/"/>
     
-      <category term="pacman" scheme="http://shirleyYing.com/tags/pacman/"/>
+      <category term="pacman" scheme="https://shirleyYing.com/tags/pacman/"/>
     
-      <category term="blog" scheme="http://shirleyYing.com/tags/blog/"/>
+      <category term="blog" scheme="https://shirleyYing.com/tags/blog/"/>
     
-      <category term="tools" scheme="http://shirleyYing.com/categories/tools/"/>
+      <category term="tools" scheme="https://shirleyYing.com/categories/tools/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[前端ps工具使用技巧]]></title>
-    <link href="http://shirleyYing.com/2015/10/07/ps-cut/"/>
-    <id>http://shirleyYing.com/2015/10/07/ps-cut/</id>
+    <link href="https://shirleyYing.com/2015/10/07/ps-cut/"/>
+    <id>https://shirleyYing.com/2015/10/07/ps-cut/</id>
     <published>2015-10-07T12:53:57.000Z</published>
     <updated>2018-01-27T13:35:01.768Z</updated>
     <content type="html"><![CDATA[<h1 id="前端ps工具使用技巧">前端ps工具使用技巧</h1><a id="more"></a>
@@ -311,13 +319,13 @@ default values:</code>flex-start`<br><figure class="highlight css"><table><tr><t
     
     </summary>
     
-      <category term="前端" scheme="http://shirleyYing.com/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://shirleyYing.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="PScc" scheme="http://shirleyYing.com/tags/PScc/"/>
+      <category term="PScc" scheme="https://shirleyYing.com/tags/PScc/"/>
     
-      <category term="切图" scheme="http://shirleyYing.com/tags/%E5%88%87%E5%9B%BE/"/>
+      <category term="切图" scheme="https://shirleyYing.com/tags/%E5%88%87%E5%9B%BE/"/>
     
-      <category term="tools" scheme="http://shirleyYing.com/categories/tools/"/>
+      <category term="tools" scheme="https://shirleyYing.com/categories/tools/"/>
     
   </entry>
   

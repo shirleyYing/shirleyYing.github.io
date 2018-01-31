@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://shirleyYing.com/2015/10/07/hexo-bolg-github/</loc>
+    <loc>https://shirleyYing.com/2018/01/08/es6-modules-load/</loc>
+    <lastmod>2018-01-31T12:07:50.480Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shirleyYing.com/2015/12/13/flex/</loc>
+    <lastmod>2018-01-31T12:06:36.271Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shirleyYing.com/2017/12/29/new-life/</loc>
+    <lastmod>2018-01-31T12:06:00.266Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shirleyYing.com/2017/12/29/2017-summary/</loc>
+    <lastmod>2018-01-31T12:04:34.669Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shirleyYing.com/2015/10/07/hexo-bolg-github/</loc>
     <lastmod>2018-01-28T14:00:50.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://shirleyYing.com/2018/01/08/es6-modules-load/</loc>
-    <lastmod>2018-01-27T13:44:42.057Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shirleyYing.com/tags/index.html</loc>
+    <loc>https://shirleyYing.com/tags/index.html</loc>
     <lastmod>2018-01-27T13:35:01.786Z</lastmod>
   </url>
   
   <url>
-    <loc>http://shirleyYing.com/2015/10/07/ps-cut/</loc>
+    <loc>https://shirleyYing.com/2015/10/07/ps-cut/</loc>
     <lastmod>2018-01-27T13:35:01.768Z</lastmod>
   </url>
   
   <url>
-    <loc>http://shirleyYing.com/2017/12/29/new-life/</loc>
+    <loc>https://shirleyYing.com/categories/index.html</loc>
     <lastmod>2018-01-27T13:35:01.768Z</lastmod>
   </url>
   
   <url>
-    <loc>http://shirleyYing.com/categories/index.html</loc>
-    <lastmod>2018-01-27T13:35:01.768Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shirleyYing.com/2017/12/29/2017-summary/</loc>
+    <loc>https://shirleyYing.com/2016/01/10/box-sizing/</loc>
     <lastmod>2018-01-27T13:35:01.767Z</lastmod>
   </url>
   
   <url>
-    <loc>http://shirleyYing.com/2015/12/13/flex/</loc>
-    <lastmod>2018-01-27T13:35:01.767Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shirleyYing.com/2016/06/02/data-processing/</loc>
-    <lastmod>2018-01-27T13:35:01.767Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shirleyYing.com/2016/01/10/box-sizing/</loc>
+    <loc>https://shirleyYing.com/2016/06/02/data-processing/</loc>
     <lastmod>2018-01-27T13:35:01.767Z</lastmod>
   </url>
   
