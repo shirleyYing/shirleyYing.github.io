@@ -4,7 +4,7 @@
   <subtitle><![CDATA[keep Calm]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://shirleyYing.com/"/>
-  <updated>2018-01-31T12:07:50.480Z</updated>
+  <updated>2018-01-31T14:14:45.578Z</updated>
   <id>https://shirleyYing.com/</id>
   
   <author>
@@ -13,6 +13,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[浏览器缓存原理]]></title>
+    <link href="https://shirleyYing.com/2018/01/31/browser-cache/"/>
+    <id>https://shirleyYing.com/2018/01/31/browser-cache/</id>
+    <published>2018-01-31T14:13:31.000Z</published>
+    <updated>2018-01-31T14:14:45.578Z</updated>
+    <content type="html"><![CDATA[<p>http1中利用缓存机制可以节约http请求数量，减少请求数据<br><a id="more"></a><br>弱缓存（协商缓存）<br>1.第一次请求， 服务端通过 last-Modified 或 Etag标记实体</p>
+<p>再次发起请求，带上If-Modified-Since: 上次 Last-Modified 的内容或If-None-Match: 上次 ETag 的内容，询问服务端资源是否过期。（服务端此时会对比该文件在服务器上的last-modified和Etag，若没有变化，则表示没有过期）</p>
+<p>没有过期，直接返回一个状态码为 304、正文为空的响应，告知浏览器使用本地缓存(可以节约返回数据)</p>
+<p>过期，返回资源，状态码200，新的last-modified，ETag，和正文。</p>
+<p>用两个字段完成标识的意义是？</p>
+<p>last-modified有问题，第一，只能精确到秒，第二，负载均衡算法中，各机器读到的文件修改时间不一致，会导致文件无故失效或着得不到更新。ETap是由服务端生成的摘要，更准确。</p>
+<p>强缓存<br>用 expire 和cache-control（max-age= xxx） 前者规定文件到期时间，后者规定时间段。expire会依赖客户端时间，cache-control是相对时间，更准确一点，若两者同时设定 cache-control会覆盖expire</p>
+<p>浏览器刷新清缓存规则<br>F5(cmd+r):清楚一般缓存，就是弱缓存，可能看到304</p>
+<p>control+F5(shift+cmd+r):强制刷新，强刷会忽略浏览器所有缓存（并且请求头会携带 Cache-Control:no-cache 和 Pragma:no-cache，用来通知所有中间节点忽略缓存）。只有从地址栏或收藏夹输入网址、点击链接等情况下，浏览器才会使用强缓存。</p>
+<p>综合使用<br>一般服务端返回的头部都会带上上述字段，那是如何配合使用的呢？</p>
+<p>浏览器缓存流程<br>第一次发起请求（www.baidu.com）</p>
+<p>request header：无</p>
+<p>response header：status：200，last-modified:xxx,ETag:’xxx’,cache-control:max-age=3600</p>
+<p>第二次发起同样的请求（浏览器刷新）</p>
+<p>根据cache-control判断是否使用缓存，若未过期，不向服务端发起请求，如图</p>
+<p>图1<br>若过期，则向服务端发起请求，服务端端根据last-modified和ETag判断文件是否有改动，若没有，则返回304，浏览器继续使用缓存</p>
+<p>若文件有改动，则返回200，新的last-modified，ETag 以及正文</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>http1中利用缓存机制可以节约http请求数量，减少请求数据<br>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HSTS详解-让信息传递更安全]]></title>
+    <link href="https://shirleyYing.com/2018/01/31/hsts/"/>
+    <id>https://shirleyYing.com/2018/01/31/hsts/</id>
+    <published>2018-01-31T14:10:46.000Z</published>
+    <updated>2018-01-31T14:12:49.506Z</updated>
+    <content type="html"><![CDATA[<p>http站点重定向问题优化<br><a id="more"></a><br>随着网络信息传输安全越来越被重视，https越来越普及，大量网站开始全面部署https。为了做到无痛切换，旧的<code>http://</code>必须要保持能够访问，比如，用户直接输入url进入网站，或者保存了之前使用http协议的书签，直接点击链接进入。那怎么办呢？最简单的办法就是使用302重定向，服务端返回302，在<code>location</code>中设置新的<code>https</code>的网址，浏览器再一次发起请求。像这样</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3301631-a9066e5a8c88fafc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网络请求.png"><br>这样的方式存在两点不足：</p>
+<ol>
+<li>第一个请求是明文，若包含敏感信息，容易泄露，很难抵御SSL剥离攻击。</li>
+<li>第一个请求无效，浪费了网络请求</li>
+</ol>
+<p><strong>SSL剥离攻击</strong>，就是利用用户很少直接在地址栏输入<code>https://</code>，用户总是通过点击链接或<strong>3xx重定向</strong>，从HTTP页面进入HTTPS页面,攻击利用302重定向，将所有https的重定向链接修改为http，从而阻止建立https的安全链接。为了解决这一问题，互联网工程任务组发布了一个互联网安全策略机制：HSTS-HTTP严格传输安全。下面，让我们一探究竟。</p>
+<h2 id="含义">含义</h2><p>网站选择使用HSTS策略，来让浏览器强制使用HTTPS会话劫持风险。</p>
+<h2 id="工作原理">工作原理</h2><p>该策略主要依靠服务端实现，当客户端(浏览器)通过<code>https</code>发出请求时，服务端在响应头中包含<code>Strict-Transport-Security</code>字段，例如：<code>Strict-Transport-Security: max-age =31536000</code></p>
+<p>这意味着：</p>
+<ol>
+<li>在接下来的一年中（max-age），所有通过http访问www.example.com及子域名时，比如，访问<code>http://www.example.com</code>浏览器应当自动将 http 转写成 https，使用307 Internal Redirect ，直接向<code>https://www.example.com/</code> 发送请求。</li>
+<li>在接下来的一年中，如果 example.com 服务器发送的TLS证书无效，用户不能忽略浏览器警告继续访问网站</li>
+</ol>
+<p>好处是显而易见的：</p>
+<ol>
+<li>避免SSL剥离攻击。<strong>只要浏览器曾经与服务器创建过一次安全连接</strong>，之后浏览器会强制使用HTTPS，即使链接被换成了HTTP。</li>
+<li>避免假冒证书攻击。如果中间人使用自己的自签名证书来进行攻击，浏览器会给出警告，但是许多用户会忽略警告。HSTS解决了这一问题，一旦服务器发送了HSTS字段，用户将不再允许忽略警告。</li>
+</ol>
+<p>看到这里，或许你也发现了，HSTS还有一点没有解决：用户首次访问某网站怎么办？还有办法：浏览器预置HSTS域名列表（HSTS preload list）</p>
+<h2 id="HSTS_preload_list">HSTS preload list</h2><h3 id="含义-1">含义</h3><p>HSTS preload list是Chrome浏览器中的HSTS预载入列表，在该列表中的网站，使用Chrome浏览器访问时，会自动转换成HTTPS。Firefox、Safari、Edge浏览器也在采用这个列表。</p>
+<h3 id="使用">使用</h3><p>加入HSTS preload list不但不麻烦，而且Chrome也鼓励HTTPS网站能够主动加入。申请的方法和需要满足的条件在<a href="https://hstspreload.appspot.com网站上都有具体说明。" target="_blank" rel="noopener">https://hstspreload.appspot.com网站上都有具体说明。</a><br>服务端返回字段需要满足以下条件：</p>
+<ul>
+<li><code>Strict-Transport-Security</code> max-age至少需要18周，10886400秒</li>
+<li>必须指定includeSubdomains参数</li>
+<li>必须支持preload参数<br>例如：<code>Strict-Transport-Security “max-age=31536000; includeSubDomains; preload</code></li>
+</ul>
+<h2 id="参考">参考</h2><p><a href="https://blog.wilddog.com/?page_id=1493" target="_blank" rel="noopener">解决缺陷，让HSTS变得完美</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>http站点重定向问题优化<br>]]>
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ES6 模块加载机制]]></title>

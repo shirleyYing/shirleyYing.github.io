@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="css3,html5,mobile,terminal," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -81,19 +81,16 @@
 
 
 
-<meta name="description" content="用box-sizing 解决移动端不同屏幕手机适配问题手机页面由于要适配不同屏幕大小。所以宽度都要用百分数，如果遇到占满整个屏幕宽度，还是有border的div要怎么办？">
-<meta name="keywords" content="css3,html5,mobile,terminal">
+<meta name="description" content="http1中利用缓存机制可以节约http请求数量，减少请求数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用box-sizing 解决移动端不同屏幕手机适配问题">
-<meta property="og:url" content="https://shirleyYing.com/2016/01/10/box-sizing/index.html">
+<meta property="og:title" content="浏览器缓存原理">
+<meta property="og:url" content="https://shirleyYing.com/2018/01/31/browser-cache/index.html">
 <meta property="og:site_name" content="fina&#39;s Blog">
-<meta property="og:description" content="用box-sizing 解决移动端不同屏幕手机适配问题手机页面由于要适配不同屏幕大小。所以宽度都要用百分数，如果遇到占满整个屏幕宽度，还是有border的div要怎么办？">
-<meta property="og:image" content="https://shirleyying.com/imgs/mobile.jpg">
-<meta property="og:updated_time" content="2018-01-27T13:35:01.767Z">
+<meta property="og:description" content="http1中利用缓存机制可以节约http请求数量，减少请求数据">
+<meta property="og:updated_time" content="2018-01-31T14:14:45.578Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用box-sizing 解决移动端不同屏幕手机适配问题">
-<meta name="twitter:description" content="用box-sizing 解决移动端不同屏幕手机适配问题手机页面由于要适配不同屏幕大小。所以宽度都要用百分数，如果遇到占满整个屏幕宽度，还是有border的div要怎么办？">
-<meta name="twitter:image" content="https://shirleyying.com/imgs/mobile.jpg">
+<meta name="twitter:title" content="浏览器缓存原理">
+<meta name="twitter:description" content="http1中利用缓存机制可以节约http请求数量，减少请求数据">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://shirleyYing.com/2016/01/10/box-sizing/"/>
+  <link rel="canonical" href="https://shirleyYing.com/2018/01/31/browser-cache/"/>
 
 
 
 
 
-  <title>用box-sizing 解决移动端不同屏幕手机适配问题 | fina's Blog</title>
+  <title>浏览器缓存原理 | fina's Blog</title>
   
 
 
@@ -236,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://shirleyYing.com/2016/01/10/box-sizing/">
+    <link itemprop="mainEntityOfPage" href="https://shirleyYing.com/2018/01/31/browser-cache/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhangying">
@@ -253,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">用box-sizing 解决移动端不同屏幕手机适配问题</h1>
+          <h1 class="post-title" itemprop="name headline">浏览器缓存原理</h1>
         
 
         <div class="post-meta">
@@ -265,8 +262,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-10T17:45:22+08:00">
-                2016-01-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-31T22:13:31+08:00">
+                2018-01-31
               </time>
             
 
@@ -275,28 +272,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css3/" itemprop="url" rel="index">
-                    <span itemprop="name">css3</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -325,19 +300,23 @@
       
 
       
-        <h1 id="用box-sizing_解决移动端不同屏幕手机适配问题">用box-sizing 解决移动端不同屏幕手机适配问题</h1><p>手机页面由于要适配不同屏幕大小。所以宽度都要用百分数，如果遇到占满整个屏幕宽度，还是有border的div要怎么办？</p>
-<a id="more"></a>
-<p>css3里面的一个属性：<code>box-sizing</code> 直接解决了问题。<br>比方说这样一个页面。<br><img src="/imgs/mobile.jpg" alt="view"><br>移动端的h5页面，需要设配不同屏幕尺寸，但是<code>width</code> 又是不算border的。那也就是说<code>width:100%</code> 就不能用了，但是我怎么知道有多少尺寸等着我啊。多次尝试未果，打算用背景图来解决。牛逼闪闪的师父给了我这个建议：<strong>box-sizing</strong>。</p>
-<p>box-sizing：content-box| border-box</p>
-<p>content-box: 就是现代浏览器盒模型的计算方法，width就是你自己写的width，padding，border都不算在里面。</p>
-<p>border-box： width是总的占的尺寸。所有都算。</p>
-<p>像这个页面，上半部分绿色的框需要占满整个屏幕，下半部分press按钮又需要在下半部分的高度里垂直居中。刚刚的box-sizing搞定了上半部分。下半部分的垂直居中，同样遇到了 <code>height</code> 不固定的问题。用flex做垂直居中是个比较好的选择。同样需要用到  <code>box-sizing</code></p>
-<h3 id="解决方案">解决方案</h3><p>把上半部分的高度用px固定死当然会适配几种尺寸，然后下半部分用一个div。绝对定位，占满整个屏幕，然后padding-top把它的位置调下来。</p>
-<p>box-sizing 又一次起作用了。如果不加box-sizing，你的高度就要爆掉了。然后flex垂直居中，完美。</p>
-<p>代码就不上了，比较懒~</p>
-<h3 id="另一个问题">另一个问题</h3><p>做到这还遇到了另外一个问题：div 层次的问题。<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">.top</span>&#123;</span><br><span class="line">    <span class="string">.loading</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">.bottom</span>&#123;</span><br><span class="line">    <span class="string">.button</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>首先效果是先出loading几秒，然后淡入首页，但是loading出现的时候，下面的bottom块也在。第一个想法肯定是加z-index了，但是，加了没用。<br>原因：<br>它放在top里面。top和bottom是平级的。也就是说，用了绝对定位后，bottom就在top前面了。top里面的loading index再高，父元素不给力，也是没办法的。所以，在top上加<code>z-index</code> 就好了。之前看过一篇特别棒的写 z-index的文章，贴在这里。<br>[<a href="http://www.w3cplus.com/css/what-no-one-told-you-about-z-index.html" target="_blank" rel="noopener">http://www.w3cplus.com/css/what-no-one-told-you-about-z-index.html</a>]</p>
-<p>第一次做移动端的页面，确实要考虑很多适配问题，之后遇到其他的，继续记录。</p>
+        <p>http1中利用缓存机制可以节约http请求数量，减少请求数据<br><a id="more"></a><br>弱缓存（协商缓存）<br>1.第一次请求， 服务端通过 last-Modified 或 Etag标记实体</p>
+<p>再次发起请求，带上If-Modified-Since: 上次 Last-Modified 的内容或If-None-Match: 上次 ETag 的内容，询问服务端资源是否过期。（服务端此时会对比该文件在服务器上的last-modified和Etag，若没有变化，则表示没有过期）</p>
+<p>没有过期，直接返回一个状态码为 304、正文为空的响应，告知浏览器使用本地缓存(可以节约返回数据)</p>
+<p>过期，返回资源，状态码200，新的last-modified，ETag，和正文。</p>
+<p>用两个字段完成标识的意义是？</p>
+<p>last-modified有问题，第一，只能精确到秒，第二，负载均衡算法中，各机器读到的文件修改时间不一致，会导致文件无故失效或着得不到更新。ETap是由服务端生成的摘要，更准确。</p>
+<p>强缓存<br>用 expire 和cache-control（max-age= xxx） 前者规定文件到期时间，后者规定时间段。expire会依赖客户端时间，cache-control是相对时间，更准确一点，若两者同时设定 cache-control会覆盖expire</p>
+<p>浏览器刷新清缓存规则<br>F5(cmd+r):清楚一般缓存，就是弱缓存，可能看到304</p>
+<p>control+F5(shift+cmd+r):强制刷新，强刷会忽略浏览器所有缓存（并且请求头会携带 Cache-Control:no-cache 和 Pragma:no-cache，用来通知所有中间节点忽略缓存）。只有从地址栏或收藏夹输入网址、点击链接等情况下，浏览器才会使用强缓存。</p>
+<p>综合使用<br>一般服务端返回的头部都会带上上述字段，那是如何配合使用的呢？</p>
+<p>浏览器缓存流程<br>第一次发起请求（www.baidu.com）</p>
+<p>request header：无</p>
+<p>response header：status：200，last-modified:xxx,ETag:’xxx’,cache-control:max-age=3600</p>
+<p>第二次发起同样的请求（浏览器刷新）</p>
+<p>根据cache-control判断是否使用缓存，若未过期，不向服务端发起请求，如图</p>
+<p>图1<br>若过期，则向服务端发起请求，服务端端根据last-modified和ETag判断文件是否有改动，若没有，则返回304，浏览器继续使用缓存</p>
+<p>若文件有改动，则返回200，新的last-modified，ETag 以及正文</p>
 
       
     </div>
@@ -353,18 +332,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/css3/" rel="tag"># css3</a>
-          
-            <a href="/tags/html5/" rel="tag"># html5</a>
-          
-            <a href="/tags/mobile/" rel="tag"># mobile</a>
-          
-            <a href="/tags/terminal/" rel="tag"># terminal</a>
-          
-        </div>
-      
 
       
       
@@ -374,8 +341,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/13/flex/" rel="next" title="flex属性介绍">
-                <i class="fa fa-chevron-left"></i> flex属性介绍
+              <a href="/2018/01/31/hsts/" rel="next" title="HSTS详解-让信息传递更安全">
+                <i class="fa fa-chevron-left"></i> HSTS详解-让信息传递更安全
               </a>
             
           </div>
@@ -383,10 +350,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/02/data-processing/" rel="prev" title="记录--一个简单的数据封装">
-                记录--一个简单的数据封装 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -438,17 +401,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -515,22 +469,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#用box-sizing_解决移动端不同屏幕手机适配问题"><span class="nav-number">1.</span> <span class="nav-text">用box-sizing 解决移动端不同屏幕手机适配问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">1.0.1.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#另一个问题"><span class="nav-number">1.0.2.</span> <span class="nav-text">另一个问题</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
