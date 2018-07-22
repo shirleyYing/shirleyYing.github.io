@@ -4,7 +4,7 @@
   <subtitle><![CDATA[keep Calm]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://shirleyYing.com/"/>
-  <updated>2018-05-13T03:47:38.000Z</updated>
+  <updated>2018-07-22T15:25:52.477Z</updated>
   <id>https://shirleyYing.com/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[MAC下mongodb 安装及权限配置]]></title>
+    <link href="https://shirleyYing.com/2018/07/22/mongodb-install/"/>
+    <id>https://shirleyYing.com/2018/07/22/mongodb-install/</id>
+    <published>2018-07-22T15:03:06.000Z</published>
+    <updated>2018-07-22T15:25:52.477Z</updated>
+    <content type="html"><![CDATA[<p>mongodb 安装及用户配置流水账式记录<br><a id="more"></a><br>mac下直接使用了homeBrew安装。</p>
+<h4 id="安装">安装</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew <span class="keyword">update</span> </span><br><span class="line">brew <span class="keyword">install</span> mongodb</span><br><span class="line">brew <span class="keyword">install</span> mongodb <span class="comment">--with-openssl //带TLS/SSL支持</span></span><br><span class="line">brew <span class="keyword">install</span> mongodb <span class="comment">--devel //获取最新版本的</span></span><br></pre></td></tr></table></figure>
+<p>安装版本为 4.0<br>通过homebrew安装的会自动在<code>/usr/local/etc/</code>下创建<code>mongod.conf</code>文件。内容如下<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">systemLog:</span></span><br><span class="line"><span class="symbol">  destination:</span> file</span><br><span class="line"><span class="symbol">  path:</span> <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/var/</span>log<span class="meta-keyword">/mongodb/</span>mongo.log</span><br><span class="line"><span class="symbol">  logAppend:</span> true</span><br><span class="line"><span class="symbol">storage:</span></span><br><span class="line"><span class="symbol">  dbPath:</span> <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/var/</span>mongodb</span><br><span class="line"><span class="symbol">net:</span></span><br><span class="line"><span class="symbol">  bindIp:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure></p>
+<p>可以看到，指定了log和数据库文件位置。</p>
+<h4 id="启动">启动</h4><p>启动指令：<code>mongod --config /usr/local/etc/mongod.conf -auth</code><br>启动后的输出比以前少了不少。<br><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2018<span class="string">-07</span><span class="string">-22</span>T22:58:03.137<span class="string">+0800</span> I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'</span><br></pre></td></tr></table></figure></p>
+<h4 id="登录创建用户">登录创建用户</h4><ol>
+<li>为了使用账号密码登录，在上面的启动命令中，加了 <code>-auth</code> ，作用是开启权限验证。</li>
+<li>切换到admin 数据库<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="selector-tag">db</span><span class="selector-class">.createUser</span>(&#123;</span><br><span class="line">     <span class="attribute">user</span>:<span class="string">"admin"</span>,</span><br><span class="line">     <span class="attribute">pwd</span>:<span class="string">"admin"</span>,</span><br><span class="line">     <span class="attribute">roles</span>:[&#123;</span><br><span class="line">         <span class="attribute">role</span>:<span class="string">"root"</span>,</span><br><span class="line">         <span class="attribute">db</span>:<span class="string">"admin"</span></span><br><span class="line">     &#125;]</span><br><span class="line"> &#125;)</span><br><span class="line">&gt; <span class="selector-tag">db</span><span class="selector-class">.auth</span>(<span class="string">"admin"</span>, <span class="string">"admin"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>创建最高权限的管理员</p>
+<ol>
+<li>切换到所在数据库，创建用户<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="selector-tag">db</span><span class="selector-class">.createUser</span>(&#123;<span class="attribute">user</span>:<span class="string">"user"</span>,<span class="attribute">pwd</span>:<span class="string">"123456"</span>,<span class="attribute">roles</span>:[&#123;<span class="attribute">role</span>:<span class="string">"dbOwner"</span>,<span class="attribute">db</span>:<span class="string">"mock"</span>&#125;]&#125;)</span><br><span class="line">&gt; <span class="selector-tag">db</span><span class="selector-class">.auth</span>(<span class="string">"user"</span>, <span class="string">"123456"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>mongodb 安装及用户配置流水账式记录<br>]]>
+    
+    </summary>
+    
+      <category term="mongodb" scheme="https://shirleyYing.com/tags/mongodb/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Node多进程学习(一)]]></title>
@@ -365,11 +396,11 @@ default values:</code>flex-start`<br><figure class="highlight css"><table><tr><t
     
     </summary>
     
-      <category term="css3" scheme="https://shirleyYing.com/tags/css3/"/>
-    
       <category term="前端" scheme="https://shirleyYing.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="移动端" scheme="https://shirleyYing.com/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+      <category term="css3" scheme="https://shirleyYing.com/tags/css3/"/>
     
       <category term="flex" scheme="https://shirleyYing.com/tags/flex/"/>
     
