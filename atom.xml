@@ -4,7 +4,7 @@
   <subtitle><![CDATA[keep Calm]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://shirleyYing.com/"/>
-  <updated>2018-07-22T15:25:52.477Z</updated>
+  <updated>2018-09-02T10:39:11.000Z</updated>
   <id>https://shirleyYing.com/</id>
   
   <author>
@@ -13,6 +13,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[roadhog-api-doc 玩法介绍]]></title>
+    <link href="https://shirleyYing.com/2018/09/02/roadhog-api-doc/"/>
+    <id>https://shirleyYing.com/2018/09/02/roadhog-api-doc/</id>
+    <published>2018-09-02T03:45:23.000Z</published>
+    <updated>2018-09-02T10:39:11.000Z</updated>
+    <content type="html"><![CDATA[<p>接口测试好用工具，roadhog-api-doc 用法介绍<br><a id="more"></a></p>
+<p>最近工作中遇到了排期比较紧张的项目，前后端分离并行开发成为必然选择。所谓前后端分离，即约定好一套接口标准，前后端各自独立开发，就不会被对方的技术难点给阻塞住，从而保证项目进度。这样的并行开发看似美好，实际使用起来也遇到了不少痛点:</p>
+<ol>
+<li>在联调测试中，接口不稳定，甚至约定接口字段变化的现象时有发生。直接反应是页面报错或显示不正常，比较难快速定位问题。</li>
+<li>约定的接口总是开后端开发自己约定，只言片语或零散的json文件，不能形成文档，不利于维护与交接。</li>
+</ol>
+<p>项目主要使用了组件库<code>ant-design</code>.以及基于此的中台前端解决方案 <code>ant-design-pro</code>. 该解决方案底层工具使用<code>roadhog</code>，该工具除了包装webpack，webpack-dev-server 完成构建,和开发中的自动同步构建，还增加了代理转发的功能，通过代理请求就能够轻松处理数据模拟的功能。使得在项目中可以轻松集成模拟数据。</p>
+<p>当然只是使用模拟数据还是不够的，使用<code>roadhog-api-doc</code>自动生成文档工具，通过读取假数据配置文件，可以自动生成文档。恰当使用配置，指定ip，端口，还可以在文档上直接发起请求访问真实数据，自己写个循环脚本就可以批量测试接口啦。糟糕~ 是心动的感觉。</p>
+<p>前戏这么久，终于进入正题了。下面进入使用攻略环节。</p>
+<h3 id="基本使用">基本使用</h3><p><code>roadhog-api-doc</code> 主要是靠读取 <code>.roadhog.mock.js</code>文件生成文档。所有的mock数据都要写在这里。形式如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; postRule &#125; <span class="keyword">from</span> <span class="string">'./mock/rule'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; format &#125; <span class="keyword">from</span> <span class="string">'roadhog-api-doc'</span>;</span><br><span class="line"><span class="keyword">const</span> proxy = &#123;</span><br><span class="line">  <span class="string">'GET /api/currentUser'</span>: &#123;</span><br><span class="line">    <span class="comment">// 接口描述</span></span><br><span class="line">    $desc: <span class="string">"获取当前用户接口"</span>,</span><br><span class="line">    <span class="comment">// 接口参数</span></span><br><span class="line">    $params: &#123;</span><br><span class="line">      pageSize: &#123;</span><br><span class="line">        desc: <span class="string">'分页'</span>,</span><br><span class="line">        exp: <span class="number">2</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 接口返回</span></span><br><span class="line">    $body: &#123;</span><br><span class="line">      name: <span class="string">'momo.zxy'</span>,</span><br><span class="line">      avatar: imgMap.user,</span><br><span class="line">      userid: <span class="string">'00000001'</span>,</span><br><span class="line">      notifyCount: <span class="number">12</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">'POST /api/rule'</span>: &#123;</span><br><span class="line">    $params: &#123;</span><br><span class="line">      pageSize: &#123;</span><br><span class="line">        desc: <span class="string">'分页'</span>,</span><br><span class="line">        exp: <span class="number">2</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    $body: postRule,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// format 函数用于保证本地的模拟正常，如果写了文档，这个函数转换是必要的</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> format(proxy);</span><br></pre></td></tr></table></figure></p>
+<p>生成结果如下<br><img src="/imgs/roadhog-api-doc.png" alt="api-doc"></p>
+<p>文档中请求地址，参数，一应俱全。通过在mock接口中增加描述字段，就可以直接在文档中显示了。点击 send 按钮,及发送请求。弹框输出请求结果<br>使用 <code>roadhog-api-doc start [port]</code> 即启动服务，指定端口，相当于开发环境，自动监控文件变化刷新页面<br>使用 <code>roadhog-api-doc build [port]</code> 构建文档，输出到dist目录，生成 api.html, api.js, api.css 三个文件</p>
+<h3 id="进阶使用">进阶使用</h3><p>输出了api文档，但是还想要请求真实环境地址，集中测试接口怎么办？<br>看了源码后发现，请求地址的ip部分写死了 <code>localhost</code>,只有端口可变。在<code>lib/</code>目录下，源码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">const</span> configContent = <span class="string">`</span></span><br><span class="line"><span class="string">  export default &#123;</span></span><br><span class="line"><span class="string">    port: "<span class="subst">$&#123;projectServerPort&#125;</span>",</span></span><br><span class="line"><span class="string">    docPort: "<span class="subst">$&#123;port&#125;</span>",</span></span><br><span class="line"><span class="string">    isStatic: <span class="subst">$&#123;isStatic&#125;</span>,</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line"></span><br><span class="line">    fs.writeFileSync(path.join(tempDir, <span class="string">'./src/config.js'</span>), configContent, <span class="string">'utf-8'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (projectServerPort) &#123;</span><br><span class="line">      <span class="keyword">const</span> mockjsContent = <span class="string">`</span></span><br><span class="line"><span class="string">export default &#123;</span></span><br><span class="line"><span class="string">  'GET /api/*': 'http://localhost:<span class="subst">$&#123;projectServerPort&#125;</span>/',</span></span><br><span class="line"><span class="string">  'POST /api/*': 'http://localhost:<span class="subst">$&#123;projectServerPort&#125;</span>/'</span></span><br><span class="line"><span class="string">&#125;;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">      fs.writeFileSync(path.join(tempDir, <span class="string">'./.roadhogrc.mock.js'</span>), mockjsContent, <span class="string">'utf-8'</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>projectServerPort</code>是命令行输入的端口号，我们想要修改ip，需要修改一下源码。将localhost 改为参数，在命令行中输入，指定IP和端口号，就可以自由发起请求了。<br>修改代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mockjsContent = <span class="string">`</span></span><br><span class="line"><span class="string">export default &#123;</span></span><br><span class="line"><span class="string">  'GET /api/*': '<span class="subst">$&#123;projectIP&#125;</span>:<span class="subst">$&#123;projectServerPort&#125;</span>/',</span></span><br><span class="line"><span class="string">  'POST /api/*': '<span class="subst">$&#123;projectIP&#125;</span>:<span class="subst">$&#123;projectServerPort&#125;</span>/'</span></span><br><span class="line"><span class="string">&#125;;</span></span><br></pre></td></tr></table></figure>
+<p>启动命令改为<br><code>roadhog-api-doc start [port] [ip]</code><br><code>roadhog-api-doc build [port] [ip]</code></p>
+<p>需要注意的是，start命令和build命令分别对应两个执行文件 start.js build.js 两个文件都要修改。</p>
+<h3 id="总结">总结</h3><p><code>roadhog-api-doc</code> 的实现原理很简单，就是靠读取配置文件实现一个简单的页面。在<code>ant-design-pro</code>中，配合<code>roadhog</code>一起使用,可以使用一套mock数据，既可用于前端开发，又可生成接口文档。一次修改，两边同步，非常便捷。不用特别维护接口文档，为开发省了不少力气，也避免了接口文档因为年久失修而被丢弃的命运。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>接口测试好用工具，roadhog-api-doc 用法介绍<br>]]>
+    
+    </summary>
+    
+      <category term="apiest roadhog-api-doc" scheme="https://shirleyYing.com/tags/apiest-roadhog-api-doc/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[MAC下mongodb 安装及权限配置]]></title>
@@ -396,11 +430,11 @@ default values:</code>flex-start`<br><figure class="highlight css"><table><tr><t
     
     </summary>
     
+      <category term="css3" scheme="https://shirleyYing.com/tags/css3/"/>
+    
       <category term="前端" scheme="https://shirleyYing.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="移动端" scheme="https://shirleyYing.com/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-      <category term="css3" scheme="https://shirleyYing.com/tags/css3/"/>
     
       <category term="flex" scheme="https://shirleyYing.com/tags/flex/"/>
     

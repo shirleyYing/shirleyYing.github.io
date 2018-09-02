@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="apiest roadhog-api-doc," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="fina's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="接口测试好用工具，roadhog-api-doc 用法介绍">
+<meta name="keywords" content="apiest roadhog-api-doc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="roadhog-api-doc 玩法介绍">
+<meta property="og:url" content="https://shirleyYing.com/2018/09/02/roadhog-api-doc/index.html">
+<meta property="og:site_name" content="fina&#39;s Blog">
+<meta property="og:description" content="接口测试好用工具，roadhog-api-doc 用法介绍">
+<meta property="og:image" content="https://shirleyying.com/imgs/roadhog-api-doc.png">
+<meta property="og:updated_time" content="2018-09-02T10:39:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="roadhog-api-doc 玩法介绍">
+<meta name="twitter:description" content="接口测试好用工具，roadhog-api-doc 用法介绍">
+<meta name="twitter:image" content="https://shirleyying.com/imgs/roadhog-api-doc.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shirleyYing.com/2018/09/02/roadhog-api-doc/"/>
+
+
+
+
+
+  <title>roadhog-api-doc 玩法介绍 | fina's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">fina's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">keep Calm</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shirleyYing.com/2018/09/02/roadhog-api-doc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangying">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fina's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">roadhog-api-doc 玩法介绍</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T11:45:23+08:00">
+                2018-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>接口测试好用工具，roadhog-api-doc 用法介绍<br><a id="more"></a></p>
+<p>最近工作中遇到了排期比较紧张的项目，前后端分离并行开发成为必然选择。所谓前后端分离，即约定好一套接口标准，前后端各自独立开发，就不会被对方的技术难点给阻塞住，从而保证项目进度。这样的并行开发看似美好，实际使用起来也遇到了不少痛点:</p>
+<ol>
+<li>在联调测试中，接口不稳定，甚至约定接口字段变化的现象时有发生。直接反应是页面报错或显示不正常，比较难快速定位问题。</li>
+<li>约定的接口总是开后端开发自己约定，只言片语或零散的json文件，不能形成文档，不利于维护与交接。</li>
+</ol>
+<p>项目主要使用了组件库<code>ant-design</code>.以及基于此的中台前端解决方案 <code>ant-design-pro</code>. 该解决方案底层工具使用<code>roadhog</code>，该工具除了包装webpack，webpack-dev-server 完成构建,和开发中的自动同步构建，还增加了代理转发的功能，通过代理请求就能够轻松处理数据模拟的功能。使得在项目中可以轻松集成模拟数据。</p>
+<p>当然只是使用模拟数据还是不够的，使用<code>roadhog-api-doc</code>自动生成文档工具，通过读取假数据配置文件，可以自动生成文档。恰当使用配置，指定ip，端口，还可以在文档上直接发起请求访问真实数据，自己写个循环脚本就可以批量测试接口啦。糟糕~ 是心动的感觉。</p>
+<p>前戏这么久，终于进入正题了。下面进入使用攻略环节。</p>
+<h3 id="基本使用">基本使用</h3><p><code>roadhog-api-doc</code> 主要是靠读取 <code>.roadhog.mock.js</code>文件生成文档。所有的mock数据都要写在这里。形式如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; postRule &#125; <span class="keyword">from</span> <span class="string">'./mock/rule'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; format &#125; <span class="keyword">from</span> <span class="string">'roadhog-api-doc'</span>;</span><br><span class="line"><span class="keyword">const</span> proxy = &#123;</span><br><span class="line">  <span class="string">'GET /api/currentUser'</span>: &#123;</span><br><span class="line">    <span class="comment">// 接口描述</span></span><br><span class="line">    $desc: <span class="string">"获取当前用户接口"</span>,</span><br><span class="line">    <span class="comment">// 接口参数</span></span><br><span class="line">    $params: &#123;</span><br><span class="line">      pageSize: &#123;</span><br><span class="line">        desc: <span class="string">'分页'</span>,</span><br><span class="line">        exp: <span class="number">2</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 接口返回</span></span><br><span class="line">    $body: &#123;</span><br><span class="line">      name: <span class="string">'momo.zxy'</span>,</span><br><span class="line">      avatar: imgMap.user,</span><br><span class="line">      userid: <span class="string">'00000001'</span>,</span><br><span class="line">      notifyCount: <span class="number">12</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">'POST /api/rule'</span>: &#123;</span><br><span class="line">    $params: &#123;</span><br><span class="line">      pageSize: &#123;</span><br><span class="line">        desc: <span class="string">'分页'</span>,</span><br><span class="line">        exp: <span class="number">2</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    $body: postRule,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// format 函数用于保证本地的模拟正常，如果写了文档，这个函数转换是必要的</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> format(proxy);</span><br></pre></td></tr></table></figure></p>
+<p>生成结果如下<br><img src="/imgs/roadhog-api-doc.png" alt="api-doc"></p>
+<p>文档中请求地址，参数，一应俱全。通过在mock接口中增加描述字段，就可以直接在文档中显示了。点击 send 按钮,及发送请求。弹框输出请求结果<br>使用 <code>roadhog-api-doc start [port]</code> 即启动服务，指定端口，相当于开发环境，自动监控文件变化刷新页面<br>使用 <code>roadhog-api-doc build [port]</code> 构建文档，输出到dist目录，生成 api.html, api.js, api.css 三个文件</p>
+<h3 id="进阶使用">进阶使用</h3><p>输出了api文档，但是还想要请求真实环境地址，集中测试接口怎么办？<br>看了源码后发现，请求地址的ip部分写死了 <code>localhost</code>,只有端口可变。在<code>lib/</code>目录下，源码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">const</span> configContent = <span class="string">`</span></span><br><span class="line"><span class="string">  export default &#123;</span></span><br><span class="line"><span class="string">    port: "<span class="subst">$&#123;projectServerPort&#125;</span>",</span></span><br><span class="line"><span class="string">    docPort: "<span class="subst">$&#123;port&#125;</span>",</span></span><br><span class="line"><span class="string">    isStatic: <span class="subst">$&#123;isStatic&#125;</span>,</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line"></span><br><span class="line">    fs.writeFileSync(path.join(tempDir, <span class="string">'./src/config.js'</span>), configContent, <span class="string">'utf-8'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (projectServerPort) &#123;</span><br><span class="line">      <span class="keyword">const</span> mockjsContent = <span class="string">`</span></span><br><span class="line"><span class="string">export default &#123;</span></span><br><span class="line"><span class="string">  'GET /api/*': 'http://localhost:<span class="subst">$&#123;projectServerPort&#125;</span>/',</span></span><br><span class="line"><span class="string">  'POST /api/*': 'http://localhost:<span class="subst">$&#123;projectServerPort&#125;</span>/'</span></span><br><span class="line"><span class="string">&#125;;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">      fs.writeFileSync(path.join(tempDir, <span class="string">'./.roadhogrc.mock.js'</span>), mockjsContent, <span class="string">'utf-8'</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>projectServerPort</code>是命令行输入的端口号，我们想要修改ip，需要修改一下源码。将localhost 改为参数，在命令行中输入，指定IP和端口号，就可以自由发起请求了。<br>修改代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mockjsContent = <span class="string">`</span></span><br><span class="line"><span class="string">export default &#123;</span></span><br><span class="line"><span class="string">  'GET /api/*': '<span class="subst">$&#123;projectIP&#125;</span>:<span class="subst">$&#123;projectServerPort&#125;</span>/',</span></span><br><span class="line"><span class="string">  'POST /api/*': '<span class="subst">$&#123;projectIP&#125;</span>:<span class="subst">$&#123;projectServerPort&#125;</span>/'</span></span><br><span class="line"><span class="string">&#125;;</span></span><br></pre></td></tr></table></figure>
+<p>启动命令改为<br><code>roadhog-api-doc start [port] [ip]</code><br><code>roadhog-api-doc build [port] [ip]</code></p>
+<p>需要注意的是，start命令和build命令分别对应两个执行文件 start.js build.js 两个文件都要修改。</p>
+<h3 id="总结">总结</h3><p><code>roadhog-api-doc</code> 的实现原理很简单，就是靠读取配置文件实现一个简单的页面。在<code>ant-design-pro</code>中，配合<code>roadhog</code>一起使用,可以使用一套mock数据，既可用于前端开发，又可生成接口文档。一次修改，两边同步，非常便捷。不用特别维护接口文档，为开发省了不少力气，也避免了接口文档因为年久失修而被丢弃的命运。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/apiest-roadhog-api-doc/" rel="tag"># apiest roadhog-api-doc</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/22/mongodb-install/" rel="next" title="MAC下mongodb 安装及权限配置">
+                <i class="fa fa-chevron-left"></i> MAC下mongodb 安装及权限配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">zhangying</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">Kategorien</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">Tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本使用"><span class="nav-number">1.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶使用"><span class="nav-number">2.</span> <span class="nav-text">进阶使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhangying</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
