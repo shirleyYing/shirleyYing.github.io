@@ -4,7 +4,7 @@
   <subtitle><![CDATA[keep Calm]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://shirleyYing.com/"/>
-  <updated>2018-09-02T10:39:11.000Z</updated>
+  <updated>2018-10-01T08:17:55.752Z</updated>
   <id>https://shirleyYing.com/</id>
   
   <author>
@@ -15,11 +15,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Prettier+VScode 治好你的代码洁癖]]></title>
+    <link href="https://shirleyYing.com/2018/10/01/prettier-format/"/>
+    <id>https://shirleyYing.com/2018/10/01/prettier-format/</id>
+    <published>2018-10-01T08:16:53.000Z</published>
+    <updated>2018-10-01T08:17:55.752Z</updated>
+    <content type="html"><![CDATA[<p>试想一个多人开发的项目，每次同步代码，看到各个风格迥异，换行空格混乱，4 格，2 格缩进交替上演的代码文件，分分钟逼死强迫症啊。忍无可忍只能拔枪相见了~~。统一的代码风格规范，对于多人开发的大项目一定是必不可少的，但是口头约定又是一定没有用的（nice 脸）。这时候就需要 Prettier 上场了，一个配置文件，配合 VScode，保存即格式化，你的同事都不需要知道代码风格是什么，，整个团队只要 clone 项目，自动保持统一风格。搞定！</p>
+<a id="more"></a>
+<h2 id="Prettier_是什么">Prettier 是什么</h2><blockquote>
+<p>Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.</p>
+</blockquote>
+<p>以上是 github 上的官方解释，其实就是简单的代码格式工具，和 esLint 不同在于，ESLint 只是一个代码质量工具(确保没有未使用的变量、没有全局变量，等等)。而 Prettier 只关心格式化文件(最大长度、混合标签和空格、引用样式等)。可见，代码格式统一的问题，交给 Prettirer 再合适不过了。和 Eslint 配合使用，风味更佳。</p>
+<h2 id="Prettier_怎么用">Prettier 怎么用</h2><ul>
+<li>编辑器插件</li>
+<li>CLI 命令行</li>
+</ul>
+<h3 id="编辑器">编辑器</h3><p>这里介绍 VSCode 中如何配置 Prettier</p>
+<ul>
+<li><p>安装 Prettier 插件 <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="noopener">Prettier - Code formatter</a><br>安装插件后，调出系统设置就能看到 prettier 相关选项了，如图<br><img src="/img/bVbhJa5" alt="图片描述"></p>
+</li>
+<li><p>添加自定义配置文件.prettierrc<br>作为项目的整体代码规范，如果依赖本地配置，显然是不科学的，所以需要.prettierrc 文件覆盖本地配置。我的配置文件如下</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"singleQuote"</span>: true,</span><br><span class="line"><span class="string">"trailingComma"</span>: <span class="string">"es5"</span>,</span><br><span class="line"><span class="string">"printWidth"</span>: <span class="number">140</span>,</span><br><span class="line"><span class="string">"overrides"</span>: [</span><br><span class="line">&#123;</span><br><span class="line"><span class="string">"files"</span>: <span class="string">".prettierrc"</span>,</span><br><span class="line"><span class="string">"options"</span>: &#123; <span class="string">"parser"</span>: <span class="string">"json"</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    ```</span><br><span class="line"></span><br><span class="line">到此，prettier 安装完毕，使用`shift+alt+f`就可格式化代码。当然每次手动格式化还是很费力啊，怎么办？自动保存。系统设置中增加`<span class="string">"editor.formatOnSave"</span>: true`即可自动保存，还要注意的一点是，如果同时设置了`<span class="string">"files.autoSave"</span>: <span class="string">"autoSaveDelay"</span>,`保存及格式化会失效。`files.autoSave`配置成别的选项即可。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="命令行">命令行</h3><p>命令行用法需要安装 prettier,<code>npm install prettier --save-dev</code>，使用<code>prettier write **.js</code> 就可以格式化文件。将添加到你的 NPM 脚本中，<code>prettier --write &#39;./src/**/*.js</code>,这样就可以批量格式化项目中的所有文件了。</p>
+<h2 id="结语">结语</h2><p>prettier 只关心代码格式，显然是不够的。项目中还是要引入 ESlint。两者配合才能使项目代码优雅健壮</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>试想一个多人开发的项目，每次同步代码，看到各个风格迥异，换行空格混乱，4 格，2 格缩进交替上演的代码文件，分分钟逼死强迫症啊。忍无可忍只能拔枪相见了~~。统一的代码风格规范，对于多人开发的大项目一定是必不可少的，但是口头约定又是一定没有用的（nice 脸）。这时候就需要 Prettier 上场了，一个配置文件，配合 VScode，保存即格式化，你的同事都不需要知道代码风格是什么，，整个团队只要 clone 项目，自动保持统一风格。搞定！</p>]]>
+    
+    </summary>
+    
+      <category term="JSformat Prettier" scheme="https://shirleyYing.com/tags/JSformat-Prettier/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[roadhog-api-doc 玩法介绍]]></title>
     <link href="https://shirleyYing.com/2018/09/02/roadhog-api-doc/"/>
     <id>https://shirleyYing.com/2018/09/02/roadhog-api-doc/</id>
     <published>2018-09-02T03:45:23.000Z</published>
-    <updated>2018-09-02T10:39:11.000Z</updated>
+    <updated>2018-09-02T10:41:59.000Z</updated>
     <content type="html"><![CDATA[<p>接口测试好用工具，roadhog-api-doc 用法介绍<br><a id="more"></a></p>
 <p>最近工作中遇到了排期比较紧张的项目，前后端分离并行开发成为必然选择。所谓前后端分离，即约定好一套接口标准，前后端各自独立开发，就不会被对方的技术难点给阻塞住，从而保证项目进度。这样的并行开发看似美好，实际使用起来也遇到了不少痛点:</p>
 <ol>
@@ -44,7 +80,7 @@
     
     </summary>
     
-      <category term="apiest roadhog-api-doc" scheme="https://shirleyYing.com/tags/apiest-roadhog-api-doc/"/>
+      <category term="apiest roadhog-api-doc ant-design-pro" scheme="https://shirleyYing.com/tags/apiest-roadhog-api-doc-ant-design-pro/"/>
     
   </entry>
   
